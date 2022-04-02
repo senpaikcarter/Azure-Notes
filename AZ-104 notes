@@ -479,7 +479,57 @@ ARM Templates - Parameters
 	minLength the maximum length of characters or array
 	maxLength the maximum length of characters or array
 	description the dexcription that will be displayed in the Azure Portal
-ARM Templates - 
-ARM Templates - 
-ARM Templates - 
-ARM Templates - 
+	
+	
+ARM Templates - ARM Template Functions
+	Functions - Allows you to apply transformations to your ARM variables 
+		Template Functions - built-in functions 
+		Used-Defined Functions - custom functions you create 
+		Functions are called using parentheses eg. (): 
+	Template Functions 
+		Array: array, concat, contains, createaray, empty, first, intedrsection, last, length, min, max, range, skip, take, union
+		Comparison: coalesce, equals, less, lessOrQuals, greater, greatOrEquals
+		Date: dateTimeAdd, utcNow 
+		Deployment: deployment, environment, parameters, variables
+		Logical: and, or, if, not
+		Numeric: add, copyIndex, div, float, int, min, max, mod, mul, sub
+		Object: contains, empty, intersections, json, length, union
+		Resource: extensionResourceId, ListAccountSas, listKeys, listSecrets, list*, picZones, providers, reference, resourceGroup, resourceiD, subscription, subscriptionResourceId, tenantResourceId 
+		String: base64, base64ToJson, base64ToString, concat, contains, dataUri, DataUriTOString, empty, endsWith, first, format, guid, indexOf, last, lastIndexOf, length, newGuid, padLeft, replace, skip, split startsWith, string, substring, take, toLower, toUpper, trim, uniqueString, uri, uriComponent, uriComponentToString. 
+		
+		
+ARM Templates - ARM Template Variables 
+	Nested Variables - You can use json object to have nested variables to scope your variables for multiple use cases. 
+	Scoping / Nesting variables based on environment
+		"variables": {
+		  "environmentSettings": {
+		    "test": {
+		      "instancesize": "Small", 
+		      "instanceCount": 4
+		    }
+		  }
+		}, 
+	Using Params to choose the environment
+		"parameters": {
+		  "environmentName": { 
+		    "type": "string", 
+		    "allowedValues": [
+		      "test", 
+		      "prod"
+		    ]
+		  }
+		},
+	Referencing nested variables eg Variables()[].property
+		"[variables('environmentSettings')[parameters('environmentName')].instanceSize]" 
+
+
+ARM Templates - ARM Templates Outputs
+	Outputs - Returns values from deployed resources, so you can use them programmatically
+	You specify the type and value under outputs
+		"outputs": { 
+		  "resourceID": {
+		    "type": "string",
+		    "value": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddressses_name'))]"
+	You can use the Azure API via CLI, Powershell or SDK to fetch outputs 
+	
+	
