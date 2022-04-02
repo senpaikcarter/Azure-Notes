@@ -533,3 +533,25 @@ ARM Templates - ARM Templates Outputs
 	You can use the Azure API via CLI, Powershell or SDK to fetch outputs 
 	
 	
+Storage Accounts - Introduction to Storage Accounts 
+	Azure Storage Accounts - Contains all of your Azure Storage data objects: blobs, files, queues, tables, and disks
+	
+Storage Accounts - Storage Comparison
+Storage Accounts - Core Storage Services 
+Storage Accounts - Performance Tiers
+Storage Accounts - Access Tiers
+Storage Accounts - Replication Data Redundancy
+Storage Accounts - LRS ZRS
+Storage Accounts - GRS GZRS
+Storage Accounts - RA-GRS RA-GZRS
+Storage Accounts - Introduction to Azure Blob
+Storage Accounts - Azure Blob Types 
+Storage Accounts - Azure Blob Moving Data
+Storage Accounts - Introduction to Azure Files
+Storage Accounts - Azure Files Use Cases 
+Storage Accounts - Azure Files Feature
+Storage Accounts - Azure File Sync
+Storage Accounts - Azure Storage Explorer
+Storage Accounts - AZCopy
+Storage Accounts - Azure Import Export Service
+Storage Accounts - SAS
