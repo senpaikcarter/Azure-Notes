@@ -535,6 +535,25 @@ ARM Templates - ARM Templates Outputs
 	
 Storage Accounts - Introduction to Storage Accounts 
 	Azure Storage Accounts - Contains all of your Azure Storage data objects: blobs, files, queues, tables, and disks
+	Azure Storage offers several types of stroage accounts. 
+	Each with different features and their own pricing models 
+		General-purpose v1 (legacy)
+		General-purpose v2
+		BlobStorage (legacy)
+		BlockBlobStorage
+		File Stroage
+	Storage Accounts vary with the following features: 
+		Supported Services (What can I put in this storage account?)
+			Blob, File, Queue, Table, Disk, and Data Lake Gen2
+		Performance Tiers (how fast will my read and writes be?)
+			Standard and Premium
+		Access Tiers (how often do I need quick access to files?)
+			Hot, Cool, Archive
+		Replication (How many redundant copies should be made and where?)
+			LRS, GRS, RA-GRS, ZRS, GZRS, RA-GZRS
+		Deployment Model (Who should deploy the supported services?)
+			Resource Manager, Classic
+			
 	
 Storage Accounts - Storage Comparison
 Storage Accounts - Core Storage Services 
