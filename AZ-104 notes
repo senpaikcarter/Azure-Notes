@@ -1,0 +1,485 @@
+Azure Active Directory
+	Cloud-Based identity and access management service. 
+	Manage users, Sign-Ins and access to AD-related resources
+
+Domain
+	A domain is an area of a network organized by a single authentication database
+	An Active Directory Domain is a logical grouping of AD objects on a network 
+
+Domain Controller (DC)
+	A domain controller is a server that authenticates users identities and authorizes their access to resources 
+	
+Domain Computer
+	A computer that is registered wiht a central authentication database A domain computer would be an AD Object 
+	
+AD Object
+	An AD Object is the basic element of Active Directory such as: 
+		Users, Groups, Printers, Shared Folders
+
+Group Policy Object
+	A virtual collection fo policy settings. It controls what AD objects have access to. 
+	
+Organization Units (OU)
+	A subdivision within Active Directory into which you can place users, groups, computers, and other organizational units. 
+	
+Directory Service
+	A directory service, such as Active Directory Domain Services (AD DS), provides the methods for storing directory data and making this data available to network users and administrators. A Directory service on a Domain Controller
+	
+Azure AD - Tenant
+	A tenant represents an organization in Azure Active Directory
+	A tenant is a dedicated Azure AD Server Instance 
+	A tenant is automatically created when you sign up for either
+		Microsoft Azure
+		Microsoft Intue
+		Microsoft 365
+
+Azure Active Directory Domain Services (AD DS)
+	Azure Active Direcotry Domain Services (AD DS) provides managed domain service such as: 
+		Domain Joins
+		Group Policies
+		LDAP (Lightweight Directory access protocol)
+		Kerberos / NTLM Authentication
+		
+Azure AD Connect 
+	Azure AD Connect is a hybrid service to connect your on-premise Active Directory to your Azure Account
+	Azure AD Connect allows for seamless Single Sign On from your on-premise workstation to Microsoft Azure 
+	Azure AD Connect has the following features: 
+		
+		Password hash synchronization - sign-in method, synchronizes a hash of a users on-premises AD passwords with Azure AD
+		
+		Pass-through authentication - sign-in method, allows users to use the same password on-premises and in the cloud
+		
+		Federation Integration - hybrid environment using an on-premises AD FS infrastructure, for certificate renewal
+		
+		Synchronization - Responsible for creating users, groups, and other objects, ensures on-prem and cloud data matches
+		
+		Health Monitoring - robust monitoring and provides a central location in the Azure portal to view this activity
+		
+Active Directory - Users
+	Users represent an identity for a person or employee in your domain. A user has logon credentials and can use them to log into the Azure Portal 
+		You can assign roles and administrative roles to users 
+		You can add users to groups 
+		You can enforce authentication methods such as (MFA) 
+		You can track users sign ins 
+		Track devices user's login from and allow or deny devices 
+		Assign Microsoft licenses
+		
+		Azure AD has two kinds of users: 
+			Users - A user belongs to your organization
+			Guest Users - A guest user belongs to another organization
+		
+Azure AD Groups	
+	Groups - lets the resource owner (of Azure directory owner), assign a set of access permissions to all the members of the group, instead of having to provide the rights one-by-one. 
+	Groups contain: 
+		Owners - Has permissions to add and remove members 
+		Members - Have permissions to do things 
+	Assignment 
+		You can assign roles directly to a group 
+		You can assign applications directly to a group
+		
+		Request to Join Groups
+			The group owner can let userse find their own groups to join, instead of assigning them. The owner can also set up the group to automatically accept all users that joinor to require approval. 	
+		
+Azure AD - Assign Access Rights
+	There are four ways to assign resource access rights to yoru users: 
+		Direct Assignment - The resource owner directly assigns the user to the resource
+		Group Assignment - The resource owner assigns an Azure AD group to the resource, which automatically gives all of the group members acceess to the resource 
+		
+		Rule-based Assignment - The resource owner creates a group and uses a role to define which users are assigned to a specific resource
+		 
+		 External Authority Assignment - Accesss comes from an external source, such as an on-premises directory or a SaaS app. 
+		 
+Azure AD - External Identities 
+	External Identities in Azure AD, allow people outside your organization to access your apps and resources, while letting them sign in using whatever identity they prefer.
+		
+		Supports logins from Google and Facebook
+		Share Apps with external users (B2B COllaboration)
+		Develop Apps intended for other Azure AD tenants (single tenant or multi tentant) 
+		Develop white-labeled apps for consumers and customers (Azure AD B2C) 
+	
+Azure AD - Device Management 
+	What is Device Identify Management? 
+		The management of a physical devices such as phones, tablets, laptops and desktop computers, that are granted access to company resources such as Printers, Cloud Resources via device-based Conditional Access. 	
+	
+		For companies with a distributed workforce, that allows remote employedes and employees who are allowed use their own personal equipment (Bring Your Own Device).
+		
+		A company needs a way to protect their organization's assets such as access to cloud resoures across those devices where they have less control over the physical securities of the work environment. 
+		
+	There are 3 ways to get devices into Azure AD
+		Azure AD Registered
+			Personally owned or mobile devices
+			And signed in with a personal microsoft or local account.
+			Windows 10 
+			iOS
+			Android MacOS
+		Azure AD Joined 
+			Owned by an organization
+			And signed in with an Azure AD account belonging to the organization. 
+			They exist only in the cloud
+			Windows 10
+			Windows Server 2019 VM's running in Azure 
+		Hybrid Azure AD Joined
+			Owned by an organization
+			And are signed in with an Active Directory Domain Services account belonging to that organization. 
+			They exist in the cloud and on-premises
+			Windows 7, 8.1, or 10
+			Windows Server 2008 or newer
+			
+Azure AD Registered Devices 
+	Definition - Registered to Azure AD without requiring organizational account to sign in to the device 
+	Primary audience - Bring your own device (BYOD), Mobile devices 
+	Device Ownership - User or Organization
+	Operating Systems - Windows 10, iOS, Android and MacOS
+	Provisioning
+		Windows 10 - Settings 
+		iOS/ Android - Company Portal or Microsoft Authenticator App
+		MacOS - Company Portal 
+	Device sign in options
+		End-user local credentials, Passwords, Windows hello, PIN
+		Biometrics or Pattern for other devices 
+	Device Management 
+		Mobile Device Managment (example: Microsoft Intune)
+		Mobile Application Management
+	Key capabilities 
+		SSO to cloud resources 
+		Conditional Access when Enrolled into Intune
+		Conditional Access via App protection policy
+		Enables Phone sign in with Microsoft Authenticator app 
+
+Windows Hello 
+	Gives Windows 10 users an alternative way to log into their devices and applications using:
+		fingerprint
+		iris scan 
+		facial recognition
+		
+Azure AD Registered Devices - MDM and MAM 
+	Mobile Device Managment (MDM) 
+		control the entire device, can wipe data from it, and also reset it to factory settings 
+	Mobile Application Management (MAM)
+		Publish, Push, Configure, Secure, Monitor, And update mobile apps for your users
+	MDM and MAM is managed via Microsoft Intune 
+		To use Microsoft Intune you have to upgrade to Azure AD Premium 2
+		Microsoft Intune is part of Microsoft Endpoint Manager
+		Microsoft Endpoint Manager and Intune are part of Microsoft's Enterprise Mobility = Security (EMS)
+		Intune = Endpoint Manager = EMS 
+		
+Azure Registered Devices - EMS 
+	Microsoft Enterprise Mobility + Security (EMS) 
+		Definition - Is an intelligent mobility management and security platform. Protect and secure your organization and empowers your employees to work in a new and flexible ways. 
+		
+		EMS is an umbrella of multiple Microsoft and Azure Services 
+			VERY NOTABLY 
+				AZURE ACTIVE DIRECTORY 
+				MICROSOFT INTUNE 
+				
+Azure AD Registered Devices - Microsoft Authenticator
+	Secure sign-ins for all your online accounts using: 
+		MFA 
+		Passwordless
+		Password autofill
+		
+Azure AD Joined Devices 
+	Definition - Joined only to Azure AD requiring organizatioonal account to sign-in to the device 
+	Primary Audience
+		Suitable for both cloud-only and hybrid organizations
+		Applicable to all users in an organization
+	Device Ownership 
+		Organization
+	Operating Systems
+		All Windows 10 devices except Windows 10 Home
+		Windows Server 2019 Virtual Machines running in Azure, Windows Autopilot 
+	Provisioning
+		Self-service: Windows OOBE or Settigns, Bulk Enrollment, Winodws Autopilot
+	Device Sign in options
+		Organiztional accounts using: password, windows hello for business, FIDO2.0 security keys(preview)
+	Device Management 
+		Mobile Device Managment (Microsoft Intune) 
+		Co-management with Microsoft Intune and Microsoft Endpoint Configure Manager 
+	Key capabilities 
+		SSO to both cloud and on-premises resources 
+		Conditional Access through MDM enrollment and MDM compliance evaluation
+		Self-service Password Reset and Windows Hello PIN on lock screen 
+		
+		
+Azure AD Joined Devices - Fido2.0 Security Keys 
+	Fast Identity Online (FIDO) Alliance 
+		An open industry association whose mission is to develop and promote authentication standards that help reduce the world's over reliance on paswords. 
+		FIDO Alliance has published three sets of open specifications for simpler, stronger user authentication 
+			FIDO Universal Second Factor (FIDO U2F) 
+			FIDO Universal Authentication Framework (FIDO UAF)
+			Client to Authenticator Protocols (CTAP) 
+			CTAP is complementary to the W3C's Web Authentication (WebAuthn) specification; together they are known as FIDO2
+	What is a Security Key? 
+		A secondary device used as second step in authentication process to gain access to a device, workstation or application. 
+		A security key can resemble a memory stick. 
+		When your finger makes contact with a button or exposed metal on the device it will generate and autofill a security token. 
+			Works otu of the box with Gmail Facebook and hundreds more 
+			Supports FIDO2/WebAuthn, U2F
+			Waterproof and crush resistant 
+			USB-A and NFC dual connectors on a single key 
+			
+Hybrid Azure AD joined devices 
+	Definition - Joined to on-premises AD and Azure AD requiring organizational account to sign in to the device 
+	Primary Audience
+		Suitable for hybrid organizations with existing on-premises AD infrastructure 
+		Applicable to all users in an organization
+	Device Ownership
+		Organization
+	Operating Systems
+		Windows 10, 8.1,j and 7, Windows Server 2008/R2, 2012/R2, 2016 and 2019
+	Provisioning 
+		Windows 10, Windows Server 2016/2019
+		Domain join by IT and autojoin via Azure AD Connect or ADFS config
+		Domain joing by IT and autojoin via Azure AD Connect or ADFS config
+		Domain join by Windows Autopilot and autojoin via Azure AD Connect or ADFS config
+	Device sign in options 
+		Organizational accounts using: 
+			Password
+			Windows Hellol for Business for Win 10
+	Device Management
+		Group policy, Configuration Manager standalone or co-management with Microsoft Intune
+	Key capabilities 
+		SSO to both cloud and on-premises resources 
+		Conditional Access through Domain Join or through Intune if co-managed 
+		Self-Service Password Reset and Windows Hello PIN reset on lock screen 
+		Enterprise State Roaming across devices
+		
+Hybrid Azure AD joined devices - Windows Autopilot
+	Windows Autopilot is a collection of technologies used to set up and pre-configure new devices, getting them ready for productive use
+	When initially deploying new Windows devices
+		Windows Autopilot uses the OEM-optimized version of windows 10
+		This version is preinstalled on the device, so you don't have to maintain custom images and drivers for every device model
+		Instead of re-imaging the device, your existing Windows 10 installation can be transformed into a "business-ready" state that can: 
+			Once deployed, you can manage Winsdows 10 devices with: 
+				Microsoft Intune
+				Windows Update for Business
+				Microsoft Endpoint Configuration Manager 
+				other similar tools 
+				
+##################################mistakes were made, 300 lines are missing let it be known
+
+
+Azure Policies - Azure Policy Definition File
+	Display Name - Identifies the policy (128 character limit) 
+	Type (read only )
+		Built in - maintained by Michaelsoft 
+		Custom - Created by you
+		Static - Microsoft Owned, A regulatory Compliance
+	Description - Provides the context of the policy 
+	Metadata - Optional key value information to store on the policy
+	Mode - Determines which resource types are evaluated. Changes whether using resource provider or Azure Resource Manager 
+		Resource Manager 
+			All - resource groups, subscriptions and all resource types
+			Indexed - only resource types that support tags and location
+		Resource Provider
+			Microsoft.ContainerService.Data
+			Microsoft.Kubernetes.Data
+			Microsoft.KeyVault.Data
+		Parameters - Values you can pass into the policy to allow the policy to be more flexible. A parameter has the following properties 
+			Name - the name of the parametere 
+			Type - string, array, object, boolean, integer, float or datetime
+			Metadata - used by azure to display friendly information
+				description
+				display name 
+				strong type 
+				assign permissions
+			defaultvalue
+			allowevalues
+	Policy Rule
+		consists of an if and then blocks. In the if block, you define one or more conditions that specify when the policy is enforced. You can apply logical operators to these conditions to precisely define the scenario for a policy 
+		Deny - the resource creation / update fails due to policy
+		Audit - Creates a warning event in the activity log when evaluating a non-compliant resource but it doesn't stop the request 
+		Append - Adds additional parameters/ fields to the requested resource during creation or update. A common example is adding tags on resources such as Cost Center or specifying allowec IPs for a storage resource. 
+		Audit if not exists - creates a warning event in the activity log when evaluating a non-compliant resource, but it doesn't stop the request 
+		Deploy if not exists - Executes a template deployment when specific condition is met. for example if SQL encryption is enabled on a database, then it can run a template after the DB is created to set it up a specific way. 
+		Disabled - The policy is ignored (disabled). Oftern used for testing 
+		
+		
+Azure Resource Manager - Azure Resource Manager 
+	A deployment and management service for Azure
+	Enables you to create, update, and delete resources in your azure account
+Azure Resource Manager - Introduction
+	Azure Resource Manager (ARM) is a service that allows you to manager Azure resources
+		Azure Resource Manager is a collection of services in the Azure Portal, so you can't simply type in "Azure Resource Manager" 
+	It is a management layer that allows you to: 
+		Create, Update, Delete Resources
+		Apply Management features eg. Access Controls, Locks, Tags
+		Writing Infrastructure as Code (IaC) via JSON templates. 
+			The specific features we are going to look at that make up ARM layer are the following: 
+				Subscriptions
+				Management Groups
+				Resource Groups
+				Resource Providers 
+				Resource Locks
+				Azure Blueprints
+				Resources Tags
+				Access Control 
+				Role-Based Access Controls (RBAC) 
+				Azure Policies 
+				ARM Templates 
+				
+				
+Azure Resource Manager - Use Case
+	Think of Azure Resource Manager (ARM) as a gate keeper. 
+	All requests flow through ARM and it decides whether that request can be performed on a resource. 
+	
+	
+Azure Resource Manager - Scoping
+	What is scope? 
+	Scope is a boundary of control for azure resources. it is a way to governyou resource by placing resources 
+		within a logical grouping 
+		and also applying a logical restriction in the form of rules 
+		
+	Management Groups - A logical grouping of multiple subscriptions 
+		Subsciptions - grants you access to Azure services based on a billing and support agreement
+			Resource Groups - a logical grouping of multiple resources 
+				Resources - an azure service eg. Azure VM's 
+				
+				
+Azure Resource Manager - Subscriptions
+	Before you can do anything in your Azure account. You'll need to have a subscription. An Azure Account can have multiple subscriptions and the most common three are: 
+		Free Trial 
+		Pay as you go 
+		Azure for Students 
+	At the subscription level you'll have the ability to set: 
+		Resource Tags
+		Access Controls
+		Resource Groups
+		
+		
+Azure Resource Manager - Management Groups
+	Managing multiple subscriptions (accounts) into a hierarchal structure. 
+	Each directory is given a single top level management group called the "root" management group
+	All subscriptions within a management group automatically inherit the conditions applied to the management group
+	
+	
+Azure Resource Manager - Resource Groups
+	Resource Groups - A container that holds related resources for an Azure solution
+	Resource - A manageable item that is available through Azure 
+	Resourece Provider - A service that supplies Azure resources
+	
+	
+Azure Resource Manager - Resource Providers
+	Resource Providers - In order to use Azure resources you have to register Resourec Providers
+	Many Resource Providers are registered by default for you with you Subscription
+	You can register resource providers under your subscription
+	
+	
+Azure Resource Manager - Resource Tags
+	A tag is a key and value pair that you can assign to azure resources. 
+		Tags allow you to organize your resources in the following ways: 
+			Resource management 
+				Specific workloads, environments eg. Developer environments 
+			Cost management and optimization
+				Cost tracking, budgets, alerts 
+			Operations Managment 
+				Business commitments and SLA operations eg. Mission critical services 
+			Security 
+				Classification of data and security impact
+			Governance and regulatory compliance
+			Automation
+			Workload optimization
+			
+			
+Azure Resource Manager - Resource Locks
+	As an admin, you may need to lock a subscription, resource group, or resource to prevent other userse from accidentally deleting or modifying critical resources. 
+		In the Azure portal you can set the following lock levels 
+			Cannot delete 
+				authorized users can still read and modify a resource but they cant delete the resource 
+			ReadOnly
+				authorized users can read a resource, but they can't delete or update the resources 		
+				
+				
+Azure Resource Manager - Azure Blueprints	
+	Azure blueprints enable quick creation of governed subscriptions. 
+	Compose artifacts based on common organization-based patterns into re-usable blueprints. 
+	The service is designed to help with environment setup
+	Blueprints are a declarative way to orchestrate the deployment of various resource templates and other artifacts such as: 
+		Role Assignments
+		Policy Assignments 
+		Azure Resource Manager templates (ARM Templates) 
+		Resource Groups
+			The Azure Blueprints service is backed by the globally distributed Azure Cosmos DB 
+			Blueprint objects are replicated to multiple Azure regions. 
+		ARM Templates vs Azure Blueprints 
+			Nearly everything that you want to include for deployment in Azure Blueprints can be accomplished with an ARM template
+			ARM Template
+				ARM templateds are stored either locally or in source control
+				There no active connection or relationship to the ARM template 
+			Azure Blueprints 
+				relationship between the blueprint definition (what should be deployed) and the blueprint assignment (what was deployed) 
+		Azure Blueprints supports improved tracking and auditing of deployments 
+		
+		
+ARM Templates - Introduction 
+	What is Infrastructure as Code? (IaC) 
+		the process of managing and provisioning computer data centers (eg. Azure) through machine-readable definition files (eg. JSON files) rather than physical hardware configuration or interactive configuration tools. 
+		You write a script that will setup cloud services for you. 
+		IaCs can either be: 
+			Declarative - You defined exactly what you want, and you get exactly that
+			Imperative - You define what you generally want, and the service will guess what you want. 
+	ARM Templates are JSON files that define azure resources you want to provision and azure services you want to configure 
+		With ARM templates you can: 
+			ARM templates are declarative: (you get exctly what you define)
+			stand up, tear down or share entire architectures in minutes
+			Reduce configuration mistakes 
+			Know exactly what you have defined for a stack to establish an architecture baseline for compliance 
+	With ARM templates you can: 
+		ARM teplates are declarative. (you get exactly what you define) 
+		stand up, tear down or share entire architecture in minutes
+		Reduce configuration mistakes 
+		Establish an architecture baseline for compliance 
+		Modulatrity break up your architecture in multiple files and reuse them
+		Extensibility Add Powershell and Bash scripts to your templates 
+		Testing you can use the ARM template tool kit (arm-ttk)
+		Preview Changes Before you create infrastructure via template, see what it will create
+		Built-In Validation will only deploy your template if it passes 
+		Tracked Deployments Keep track of changes to architecture over time
+		Policy as Code Apply Azure policies to ensure you remain compliant
+		Microsoft Blueprints (establishes relationship between resource and the template) 
+		CI/CD Integration
+		Exportable Code (exporting the current state of resource groups and resources)
+		Authoring tools Visual Studio Code has advanced features for authoring ARM templates 
+		
+		
+ARM Templates - Arm Template Skeleton
+	Skeleton - the genreal structure of an ARM template 
+	$schema - describes the properties that are avaialable within a template. 
+	contentVersion - the version of the template. 
+		You can provide any value for this element
+	apiProfile - Use this value to avoiid having to specify API versions for each resource in the template 
+	parameters - values you can pass along to your template 
+	variables - you transform parameters or resource properties using function expressions
+	Functions - User-defined functions available within template 
+	resources - the azure resources you'll want to deploy or update 
+	outputs - values that are returned after deployment 
+	
+	
+ARM Templates - ARM Template Resources 
+	Resource - An Azure Resource you want to provision
+		type - type of the resources
+			Follows the format of {ResourceProvider}/ResourceType
+		apiVersion - Version of the REST API to use for the resource
+			Each resource provider published its own API versions, 
+		name - Name of the resource
+		location - Most resources have a location property
+			The region where the resource will be deployed
+		Other Properties - Other properties we can use to configure the resource
+		Will vary per resource type
+		
+		
+ARM Templates - Parameters
+	Parameters - Allows you to pass variables to your ARM template
+	type - the expected data type of the inputed value 
+		string,securestring, int, bool, object, securedObject, and array. 
+	defaultValue is provided it will be set to this value 
+	allowedValues an array of allowed values 
+	minValue the minimal possible value
+	maxValue the maximum length of characters or array
+	minLength the maximum length of characters or array
+	maxLength the maximum length of characters or array
+	description the dexcription that will be displayed in the Azure Portal
+ARM Templates - 
+ARM Templates - 
+ARM Templates - 
+ARM Templates - 
