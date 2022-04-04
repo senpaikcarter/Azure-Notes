@@ -718,6 +718,15 @@ Storage Accounts - Azure Blob Types
 			
 			
 Storage Accounts - Azure Blob Moving Data
+	There are multiple ways to move data into Azure Blob Storage 
+		AzCopy - Easy to use comand line tool for windows and linux 
+		Azure Storage Data Movement library - .NET library (uses AzCopy underneath) 
+		Azure Data Factory - (An ETL service by Azure) 
+		Blobfuse - Virtual file system driver. access data through linux file system
+		Azure Data Box - A rugged device used to physically transport data to Azure 
+		Azure Import / Export Service - A service where you ship your physical disks for data transfer onto Azure 
+		
+		
 Storage Accounts - Introduction to Azure Files
 Storage Accounts - Azure Files Use Cases 
 Storage Accounts - Azure Files Feature
