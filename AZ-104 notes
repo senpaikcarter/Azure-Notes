@@ -568,6 +568,28 @@ Storage Accounts - Core Storage Services
 	 	
 	 	
 Storage Accounts - Performance Tiers
+	Ther are 2 types of performance tiers for storage accounts: Standard and Premium 
+		IOPS - stands for input / Output operations per second 
+		Premium Performance
+			Stored on Solid State Drives 
+			Optimize for low latency
+			Higher throughput
+			use cases: 
+				Interactive Workloads
+				Analytics
+				AI or ML 
+				Data Transformation
+			An SSD has no moving parts and data is distributed randomly. This is why it can read and write so fast 
+		Standard Performance
+			Stored on Hard Disk Drives 
+			Varied performance based on access tier (Hot, Cool, Archive) 
+			Use Cases: 
+				Backup and disaster recovery
+				Media Content
+				Bulk Data Processing
+			An HDD has moving parts, an arm that needs to read and write data sequential to a disk. It is very good at writing or reading large amounts of data that is close together. 
+			
+			
 Storage Accounts - Access Tiers
 Storage Accounts - Replication Data Redundancy
 Storage Accounts - LRS ZRS
