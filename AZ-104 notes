@@ -634,6 +634,23 @@ Storage Accounts - Access Tiers
 		
 		
 Storage Accounts - Replication Data Redundancy
+	When you create a Storage account you need to choose a Replication type
+	Replication stores multiple copies of your datra so that it is protected from: 
+		planned events 
+		transient hardware failures 
+		network or power outages 
+		massive natural disasters 
+	Primary Region Redundancy 
+		Locally Redundant Storage (LRS) 
+		Zone-Redundant Storage (ZRS) 
+	Secondaary Region Redundancy 
+		Geo-redundant storage (GRS) 
+		Geo-Zone-Redundant Storage (GZRS) 
+	Secondary Region Rendundancy with Read Access
+		Read-access geo-redundant storage (RA-GRS) 
+		Read-access geo-redundant storage (RA-GZRS)
+		
+		
 Storage Accounts - LRS ZRS
 Storage Accounts - GRS GZRS
 Storage Accounts - RA-GRS RA-GZRS
