@@ -680,6 +680,19 @@ Storage Accounts - GRS GZRS
 			
 			
 Storage Accounts - RA-GRS RA-GZRS
+	Redundancy in the Secondary Region with Read Access 
+		Data is replicated synchronously to primary region
+		Your data will be "in-sync" with your primary and you'll have read access. 
+	Read-Access Geo Redundant Storage (RA-GRS) 
+		copies data synchronously in primary region
+		copies data synchronously to another region 
+		99.99999999999999% (16 9's) of durability
+	Read-Access Geo-Zone-Redundant storage (GA-GZRS) 
+		copies data synchronously across 3 AZs in a physical region
+		copies data synchronously to another region
+		99.99999999999999% (16 9's) of durability
+		
+		
 Storage Accounts - Introduction to Azure Blob
 Storage Accounts - Azure Blob Types 
 Storage Accounts - Azure Blob Moving Data
