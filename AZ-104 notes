@@ -728,6 +728,15 @@ Storage Accounts - Azure Blob Moving Data
 		
 		
 Storage Accounts - Introduction to Azure Files
+	Azure Files is a fully managed file share in the cloud 
+	A file share is a centralized server for storage that allows multiple connections. 
+		Its like having one big shared drive that everyone (Virtual Machines) can work on at the same time
+	To connnect to the file share a network protocol is used: 
+		Server Message Block (SMB) 
+		Network File System (NFS) 
+	When a connection is established the file share's filesystem will be accessible in the specific directory within your own directory tree. This is known as mounting. 
+	
+	
 Storage Accounts - Azure Files Use Cases 
 Storage Accounts - Azure Files Feature
 Storage Accounts - Azure File Sync
