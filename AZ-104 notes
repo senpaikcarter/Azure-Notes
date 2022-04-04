@@ -652,7 +652,33 @@ Storage Accounts - Replication Data Redundancy
 		
 		
 Storage Accounts - LRS ZRS
+	Redundancy in the Primary Region
+		Data is replicated 3 times in the primary region
+		There are two options for storing in the primary region
+			Locally Redundant Storage (LRS)
+				Copies data synchronously in primary region
+				99.999999999 durability (11 nines)
+				Cheapest option
+			Zone-Redundant storage (ZRS)
+				copies data synchronously across 3 AZs in primary region 
+				99.9999999999 (12 9's) durability 
+				
+				
 Storage Accounts - GRS GZRS
+	Redundancy in the Secondary Region 
+		Replicate to a secnodary region in case of primary regional disaster 
+		The secondary region is determined based on your primary's pair region 
+		Secondary region isn't available for read or write access (except in event of failover) 
+		Geo Redundant Storage (GRS) 
+			copies data synchronously 
+			copies data asynchronously to another region
+			99.99999999999999% (16 9's) of durability
+		Geo-Zone-redundant storage (GZRS) 
+			copies data synchronously across 3 AZs in a physical region 
+			copies data asynchronously to another region
+			99.99999999999999% (16 9's) of durability
+			
+			
 Storage Accounts - RA-GRS RA-GZRS
 Storage Accounts - Introduction to Azure Blob
 Storage Accounts - Azure Blob Types 
