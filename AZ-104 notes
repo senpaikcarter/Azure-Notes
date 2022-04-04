@@ -694,6 +694,15 @@ Storage Accounts - RA-GRS RA-GZRS
 		
 		
 Storage Accounts - Introduction to Azure Blob
+	Blob storage is an object-store that is optimized for storing massive amounts of unstructured data. 
+	Unstructured data is dat taht doesn't adhere to particular data model or definition, such as text or binary data. 
+		Azure blobs are composed of the components:
+			Storage account 
+			FQDN 
+			Containers (similar to a folder in a file system) 
+			Blobs - the actual data being stored 3
+			
+			
 Storage Accounts - Azure Blob Types 
 Storage Accounts - Azure Blob Moving Data
 Storage Accounts - Introduction to Azure Files
