@@ -556,7 +556,17 @@ Storage Accounts - Introduction to Storage Accounts
 			
 	
 Storage Accounts - Storage Comparison
-Storage Accounts - Core Storage Services 
+	General-purpose V2 is the most common storage type aside from Blob Storage
+Storage Accounts - Core Storage Services
+	 Azure has 5 core storage services 
+	 	Azure Blob - A massively scalable objecty store for text and binary data.
+	 		Also included support for Big Data Analytics through Data Lake Storage Gen 2
+	 	Azure Files - Managed file shares for on-premises deployments
+	 	Azure Queues - A messaging store for reliable messaging between application components 
+	 	Azure Tables - a NoSQL store for schema-less storage of structured data
+	 	Azure Disks = Block level storage volumes for Azure VM's 
+	 	
+	 	
 Storage Accounts - Performance Tiers
 Storage Accounts - Access Tiers
 Storage Accounts - Replication Data Redundancy
