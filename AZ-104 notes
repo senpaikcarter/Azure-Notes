@@ -704,6 +704,19 @@ Storage Accounts - Introduction to Azure Blob
 			
 			
 Storage Accounts - Azure Blob Types 
+	Azure Storage supports 3 typs of blobs: 
+		Block blobs
+			store text and binary data 
+			made up of blocks of data that can be managed individually 
+			store up to about 4.75 TiB of data 
+		Append blobs 
+			Optimized for append operations
+			Ideal for scenarios such as loggind data from a virtual machine 
+		Page blobs 
+			store random access files up to 8TB in size 
+			store virtual hard drive (VHD) files and serve as disks for Azure virtual machines
+			
+			
 Storage Accounts - Azure Blob Moving Data
 Storage Accounts - Introduction to Azure Files
 Storage Accounts - Azure Files Use Cases 
