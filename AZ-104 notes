@@ -814,4 +814,34 @@ Storage Accounts - AZCopy
 		
 			
 Storage Accounts - Azure Import Export Service
+	Used to securely import large amounts of data to Azure Blob storage and Azure Files by shipping disk drives to an Azure DataCenter 
+		You have 2 options for shipping drives opn import: 
+			Use your own disk drives 
+			Use Microsoft provided drives 
+				Microsoft ships up to 5 encrypted solid-state disk drives (SSDs) known as Azure Data Box Disks with a 40TB total capacity per order, to your datacenter through a regional carrier. 
+			You can quickly configure Azure Data Box Disk drives, copy data to disk drives over USB 3.0 connection, and ship the disk drives back to Azure. 
+		To prepare your drive you'll need to use the command-line WAImport Export tool to 
+			Prepare your disk drives that are shipped for import. 
+			Copying your data to the drive 
+			Encrypts the data on the dirve with AES-256 bit Bitlocker. 
+			Generate the drive journal files used during import creation
+			Helps Identify numbers of drives needed for export jobs 
+		There are two versions of WAImportExport 
+			Version 1 for import/export into Azure Blob storage. 
+			Version 2 for importing data into Azure files
+		WAImportExport tool is  only compatible with 64-bit Windows. 
+		Once you have prepared your drives and generated a journal file you can create an Import Job
+			The journal file stores basic informtion such as: 
+				drive serial numbers 
+				encryption key
+				storage account details
+			you'll specify Region and Storage Account 
+			You'll provide shipping information
+			For expert jobs you can 
+				you can only export form Azure Blob 
+				you can ship up to 10 empty drives to Azure per job
+				You create an export job and the data is loaded onto those drives and shipped back to you  
+				
+				 
 Storage Accounts - SAS
+	
