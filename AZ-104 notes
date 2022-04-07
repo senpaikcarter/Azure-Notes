@@ -738,6 +738,24 @@ Storage Accounts - Introduction to Azure Files
 	
 	
 Storage Accounts - Azure Files Use Cases 
+	Use Cases
+		Completely replace or supplement on-premises file servers Network Attach Storage (NAS) devices
+			Lift-and-Shift means when you move workloads without rearchitecting, eg. importing local VMs to the cloud
+			Classic Lift - where both the application and its data are moved to Azure 
+			Hybrid Lift - where the application data is moved to Azure Files, and the application continues to run on-premises
+		Simplify cloud development
+			Shared application settings - Multiple VMs and developer workstations need to access the same config files 
+			Diagnostic share - All VMs log to file share, developers can mount and debug all logs in a centralized place
+			Dev/Test/Debug - Quickly share tools for developer needed for local environments
+		Containerization
+			You can use Azure Files to persist volumes for stateful containers
+		Why use Azure files instead of setting up your own File server? 
+			Shared Access - Already setup to work with standard networking protocols SMB anad NFS 
+			Fully Managed - Its kept up to date with security patches, designed to scale
+			Scripting and Tooling - You can automate the management and creation of file shared with Azure API Powershell
+			Resiliency - Build to be durable and always working  
+			
+			
 Storage Accounts - Azure Files Feature
 Storage Accounts - Azure File Sync
 Storage Accounts - Azure Storage Explorer
