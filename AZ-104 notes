@@ -799,5 +799,19 @@ Storage Accounts - Azure Storage Explorer
 		
 		
 Storage Accounts - AZCopy
+	AZCopy is a command-line utility that you can use to copy blobs or files to or from a storage account. 
+		Its an executable file you download 
+		you will need to have the level of authorization via attached roles
+			To download 
+				storage blob data reader 
+			To upload
+				Storage Blob Data Container 
+				Storage Blob Data Owner
+		You gain access either via 
+				Azure Active Directory (AD) 
+				Shared Access Signature (SAS) 
+		Use the Copy command to upload and download	
+		
+			
 Storage Accounts - Azure Import Export Service
 Storage Accounts - SAS
