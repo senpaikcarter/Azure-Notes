@@ -788,6 +788,11 @@ Storage Accounts - Azure Files Feature
 		
 		
 Storage Accounts - Azure File Sync
+	Azure File Sync is a service that allows you to cache Azure file shares on an on-premises Windows Server or cloud VM. 
+		You can use any protocol that's available on Windows Server to access your data locally, including SMB, NFS, and FTPS
+		You can have as many caches as you need across the world
+		
+		 
 Storage Accounts - Azure Storage Explorer
 Storage Accounts - AZCopy
 Storage Accounts - Azure Import Export Service
