@@ -794,6 +794,10 @@ Storage Accounts - Azure File Sync
 		
 		 
 Storage Accounts - Azure Storage Explorer
+	A standalone app that makes it easy to work with Azure Storage data on Windows, MacOS, and Linux. 
+		You can create Blob containers, upload files, create snapshots of Disk, and more. 
+		
+		
 Storage Accounts - AZCopy
 Storage Accounts - Azure Import Export Service
 Storage Accounts - SAS
