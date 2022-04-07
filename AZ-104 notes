@@ -757,6 +757,36 @@ Storage Accounts - Azure Files Use Cases
 			
 			
 Storage Accounts - Azure Files Feature
+	Backups 
+		You can backup your file share with shared snapshots
+			They are read-only 
+			Incremental - (they only contain as much data as has chaged since the previous snapshot)
+			You can have up to 200 snapshots per file share
+			you can retain backups for up to 10 years 
+			Backups are stored within your file share (if you delete your file share you will delete your backups)
+		Soft Delete 
+			You can prevent accidental deletion by turning on Soft Delete (Storage will be marked for deletion and retained for a period of time before final delete occurs
+		Advanced Threat Protection
+			An additional layer of security intelligence that provides alerts when it detects anomalous activity on your storage account 
+		Store Tiers
+			Premium - Store on to SSD with single-digit milliseconds for most IO operation
+			Transaction Optimized - Store on HDD with transaction heavy workloads that don't need the latency offered by premium file shares (historically this tier has been called standard) 
+			Hot - ooptimized for general purpose file sharing scenarios such as team share and Azure File Sync
+			Cool - Stored on HDD for cost-efficient storage optimized for online archive storage scenario
+	Types of Storage 
+		General purpose version 2 (GPv2) - deployed on to HDD
+		FileStorage - deployed onto SSD
+	Identity 
+		On-Premise - Azure Storage can be joined to an on-premise Active Directroy Domain Service
+		Managed - Azure Storage can be joined to Microsoft managed active directory domain service 
+		Store Account Key - A username (storage account name) and password (account key) can be used to mount 
+	Networking 
+		Azure Files are accessible inside or outside your AWS Account from anywhere via storage account public endpoint. 
+		SMB Connects to port 445, your organization may need to unblock this port so you can mount your file share. 
+	Encryption
+		Azure Files is encrypted-at-rest using Azure Storage Encryption (SSE) 
+		
+		
 Storage Accounts - Azure File Sync
 Storage Accounts - Azure Storage Explorer
 Storage Accounts - AZCopy
