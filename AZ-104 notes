@@ -844,4 +844,5 @@ Storage Accounts - Azure Import Export Service
 				
 				 
 Storage Accounts - SAS
-	
+	The URL Format Itself
+		Blob URL: https://myaccount.blob.core.windows
