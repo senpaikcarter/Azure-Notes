@@ -870,3 +870,6 @@ Storage Accounts - SAS
 		sr (Storage Resource) if the resource is a  blob, queue 
 		sp (permissions) what operations can be performed against the storage resource eg. Read (r) and Write (w)
 		sig (Signature) used to authenticate access to a SHA256 algorithm
+		You can generate SAS via 
+			Azure SDK 
+			Azure Portal 
