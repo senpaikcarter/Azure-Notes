@@ -844,5 +844,29 @@ Storage Accounts - Azure Import Export Service
 				
 				 
 Storage Accounts - SAS
-	The URL Format Itself
-		Blob URL: https://myaccount.blob.core.windows
+	A shared access signature (SAS) is a URI that grants restricted access rights to Azure Storage resoureces. 
+		Share the URI to gratnt clients temporary access to specific set of permissions
+	Types of shared access signatures
+		Account-level SAS
+			access to resources in one or more of the storage services 
+		Service-level SAS 
+			access to single the storage account by using the storage account key
+		User delegation SAS 
+			Access to storage account using Azure AD credentials
+			Limited only to Blob and Containers 
+			Microsoft considers this method best practice for accessing via SAS 
+	A shared access signature comes into different formats 
+		Ad hoc SAS 
+			the start time, expiry time, and permissions are part of the URI 
+			Any type of SAS can be an ad hoc SAS 
+		Service SAS with stored access policy 
+			A stored access policy is defined on a resource container (limited to blob container, table, queue, or file share) 
+			The stored access policy can be associated to multiple SAS to manage constraints 
+	The URI Format Itself
+		Blob URI: https://myaccount.blob.core.windows
+		sv (Storage services version) which version of the storage services to use 
+		st (start time) the time SAS becomes valid 
+		se (Expiration time) the time when the SAS becomes invalid eg. Container (c) or blob (b) 
+		sr (Storage Resource) if the resource is a  blob, queue 
+		sp (permissions) what operations can be performed against the storage resource eg. Read (r) and Write (w)
+		sig (Signature) used to authenticate access to a SHA256 algorithm
