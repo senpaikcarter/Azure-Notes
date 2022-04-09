@@ -899,6 +899,26 @@ Virtual Machines - Introduction
 		
 		
 Virtual Machines - Operating Systems
+	What is an Operating System? 
+		The OS is the program that manageds all other programs in a computer 
+		The most commonly known operating systems are Windows, macOS and Linux 
+		When you launch a Virtual Machine you need to choose an image which has a specific Operating System
+	Microsoft works closely with partners to ensure that images available are updated and optimized for an Azure runtime. Most of these images can be found in the Azure Marketplace. 
+		SUSE Linux Enterprise Server 
+		Red Hat Enterprise Linux
+		Ubuntu Server 
+		Debian 
+		FreeBSD
+		Azure Marketplace - Flatcar Container Linux
+		RancherOS
+		Bitnami Library for Azure 
+		Mesosphere DC/OS on Azure 
+		Docker Images 
+		CloudBees Jenkins Platform
+	You can Bring your own linux by creating a Linux Virtual Hard Disk (VHD) 
+		(Hyper-V virtual hard disk (VHDX) format isn't supported in Azure, only fixed VHD)
+		
+		
 Virtual Machines - Cloud Init
 Virtual Machines - Sizes
 Virtual Machines - ACUs
