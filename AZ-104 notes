@@ -873,3 +873,18 @@ Storage Accounts - SAS
 		You can generate SAS via 
 			Azure SDK 
 			Azure Portal 
+			
+			
+Virtual Machines - Introduction 
+Virtual Machines - Operating Systems
+Virtual Machines - Cloud Init
+Virtual Machines - Sizes
+Virtual Machines - ACUs
+Virtual Machines - MobileApp
+Virtual Machines - VM Generations
+Virtual Machines - 3 Ways to Connect
+Virtual Machines - SSH
+Virtual Machines - RDP
+Virtual Machines - Bastion
+Virtual Machines - Windows Vs Linux
+Virtual Machines - Update Management 
