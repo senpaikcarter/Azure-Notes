@@ -876,6 +876,28 @@ Storage Accounts - SAS
 			
 			
 Virtual Machines - Introduction 
+	Choose an OS, Compute, Memory and Storage and launch a server in minutes 
+	Azure Virtual Machines (VMs) is a highly configurable server
+	Virtualization let you run a server without having to buy and maintain the physical hardware that runs it
+		Virtual Machines still require maintenance such as: 
+			applying OS system patches 
+			Installing and configuring packages 
+		Some things you should know: 
+			The size of the virtual machine is determined by the image 
+				The image defines the combination of vCPUs, Memory and Storage Capacity
+			The current limit on a per subscription basis is 20 VMs per region. 
+			Azure VMs are billed at an hourly rate
+			A single INstance VMs has an availability of 99.9% (when all storage disks are premium) 
+			Two instances deployed in Availability Set will give you 99.95% availability  
+			You can attach multiple Managed disk to your Azure VMs
+	When you launch an Azure Virtual Mahcine other networking components will be created or associated to your Virtual Machine 
+		Network Security Group (NSG) - attached to the NIC, virtual firewall with rules around ports and protocols 
+		Network Interface (NIC) - a device that handle ip protocols and network communications
+		Virtual Machine Instance - The actual running server 
+		Public IP Address - The address that you will use publicly access your VM
+		Virtual Network (VNet) - The network where your VM will reside
+		
+		
 Virtual Machines - Operating Systems
 Virtual Machines - Cloud Init
 Virtual Machines - Sizes
