@@ -954,6 +954,11 @@ Virtual Machines - Sizes
 	
 		
 Virtual Machines - ACUs
+	Azure Compute Unit (ACU) provides a way of comparing compute (CPU) performace across Azure SKU's 
+	ACU is currently standardized on a Small (Standard_A1) VM with the value of 100
+	All other SKU's then represent approximately how much faster SKU can run a standard benchmark
+	
+	
 Virtual Machines - MobileApp
 Virtual Machines - VM Generations
 Virtual Machines - 3 Ways to Connect
