@@ -983,8 +983,38 @@ Virtual Machines - VM Generations
 		
 		
 Virtual Machines - 3 Ways to Connect
+	There are 3 ways to connecct to your Virtual Machines
+		Secure Shell (SSH) is a protocol to establish a secure connection between a client and a server. 
+			This is how you can remotely connect to your Azure VM via terminal
+			SSH happens on Port 22 via TCP
+		Remote Desktop Protocol (RDP) is a proprietary protocol developed by Microsoft which provides a user with a graphical interface to connect to another computer over a network connection
+			This is how you can remotely connect to a Windows Server via Visual Desktop 
+			RDP happens on Port 3389 via TCP and UDP 
+		Bastion
+		Azure Bastion is a service you deploy that lets you connect to a virtual machine using your browser and the Azure Portal. 
+		It provides secure and seamless RDP/SSH connectivity to your virtual machines directly from the Azure portal over TSL 
+		A bastion is a hardened instance that is monitored. Users connect to this VM which then establishes a connection to the target instance. Sometimes known as a jump box since you have one extra security step. 
+		
+		
 Virtual Machines - SSH
+	It is a very common to use SSH key pairs as a means to authenticate to your VMs. 
+	SSH Key Pairs is when you generate out two keys: 
+		A private key
+		A Public Key
+	The private key should remain on your local system and not be shared with others. 
+	The public key is stored on the VM. 
+	When you go to SSH you provide your private key and its matched against the public key to authenticate you. 
+	
+	Example: ssh -i ~/.ssh/id_rsa.pub azureuser@10.111.12.123
+	
+	
 Virtual Machines - RDP
+	In order to RDP into your Windows Server you'll need to download the RDP file. 
+	The Remote Desktop Client is already installed in Windows 10. 
+	If you are macOS you can download the Microsoft Remote Desktop from the Apple Store. 
+		Once you open the RDP file you will use the Username and Password during the creation of your VM in the Azure Portal
+		
+		
 Virtual Machines - Bastion
 Virtual Machines - Windows Vs Linux
 Virtual Machines - Update Management 
