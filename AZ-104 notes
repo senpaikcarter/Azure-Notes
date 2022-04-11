@@ -964,6 +964,24 @@ Virtual Machines - MobileApp
 	
 	
 Virtual Machines - VM Generations
+	Hyper-V is Microsoft's hardware virtualization product. 
+	It lets you create and run a software version of a computer, called a virtual machine
+	Each virtual machine acts like a complete computer, running an opertating system and programs. 
+		Hyper-V is just like Virtual Box
+	There are two generations of Hyper-V VMs:
+	Generation 1 - support most guest operating systems
+	Generation 2 - support most 64-bit version of Windows and more current versions of Linux and FreeBSD operating systems
+		Azure has Generation 1 and Generation 2 VMs which are similar but not exactly the same as Hyper-V Generations
+	The most important difference between Azure Gen 1 and Gen 2:
+		Gen 1:
+			BIOS-based architecture 
+		Gen 2: 
+			UEFI-based boot architecture (improved boot and installation times)
+			Secure Boot verifies the boot loader is signed by a trusted authority
+			Larger boot volume up to 64 TB
+			Hyper-V VMs are packaged into Virtual Hard Disk Formats: VHD or VHDX files 
+		
+		
 Virtual Machines - 3 Ways to Connect
 Virtual Machines - SSH
 Virtual Machines - RDP
