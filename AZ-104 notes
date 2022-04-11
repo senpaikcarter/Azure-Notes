@@ -949,7 +949,9 @@ Virtual Machines - Sizes
 		SKU's - NC, NCv2, NCv3, NCasT4_v3 (Preview), ND, NDv2 (Preview), NV, NVv3 NVv4
 	High performance compute - Our fastest and most powerful CPU virtual machines with optional high-througput network interfaces (RDMA) 
 		SKU's - HB, HBv2, HC, H 
-		
+	The type of image may limit you to specific VM sizes 
+	You can explore sizes and then sort and filter based on a variety of options such as cost
+	
 		
 Virtual Machines - ACUs
 Virtual Machines - MobileApp
