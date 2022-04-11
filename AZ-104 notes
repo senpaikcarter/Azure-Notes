@@ -932,6 +932,25 @@ Virtual Machines - Cloud Init
 	
 	
 Virtual Machines - Sizes
+	Azure VMs come in a variety of sizes that are also optimized for specific use cases
+	Azure VMs are grouped into: 
+		Types eg. General Purposes, Compute Optimized
+		Sizes eg. B, Dsv3 (also called Series or SKU family)
+	General Purpose - Balanced CPU to memory ratio. testing and development, small to medium databases, and low to medium traffic web servers 
+		SKU's - B, Dsv3, Dasv4, Dav4, DSv2, Dv2, Av2, DC, DCv2, Dv4, Ddv4, Ddsv4
+	Compute Optimized - High CPU to memory ratio. Good for medium traffic web servers, network appliances, batch processes, and app servers
+		SKU's - F, Fs, Fsv2
+	Memory Optimized - High memory to CPU ratio. Great for relational database servers, medium to large caches, and in-memory analytics. 
+		SKU's - Esv3, Ev3, Easv4, Eav4, Ev4, Esv4, Edv4, Edsv4, Mv2, M, DSv2, Dv2
+	Storage Optimized - High disk througput and IO ideal for Big Data, SQL, NoSQL Databases, data waerhousing, and large transactional databases 
+		SKU's - Lsv2
+	GPU - Specialized VMs for heavy graphic rendering and video editing, model training and inferencing (ND) with deep learning. 
+		Available with single or multigpu's 
+		SKU's - NC, NCv2, NCv3, NCasT4_v3 (Preview), ND, NDv2 (Preview), NV, NVv3 NVv4
+	High performance compute - Our fastest and most powerful CPU virtual machines with optional high-througput network interfaces (RDMA) 
+		SKU's - HB, HBv2, HC, H 
+		
+		
 Virtual Machines - ACUs
 Virtual Machines - MobileApp
 Virtual Machines - VM Generations
