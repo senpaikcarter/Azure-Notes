@@ -1016,5 +1016,16 @@ Virtual Machines - RDP
 		
 		
 Virtual Machines - Bastion
+	Azure Bastion is an intermediate harden instance you can use to connect to your target server via SSH or RDP
+	It will provision a Web based RDP client or SSH Terminal
+	Some devices cannot run an RDP CLient such as Google Chromebook and so Azure Bastion is one of the only ways to allow you to do that
+		When you create an Azure Bastion 
+		You need to add a Subnet to your VNet called AzureBastionSubnet with at least a size of /27 (32 addresses)
+	If you have a Windows Server which requires RDP, and have a Bastion in the same VNet 
+	You just enter in your username and password as you normally would
+	If you have a Linux server you can SSH with the Bastion 
+	You can use SSH Private Keyh or Password that you set when you created your VM
+	
+	
 Virtual Machines - Windows Vs Linux
 Virtual Machines - Update Management 
