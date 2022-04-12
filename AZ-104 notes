@@ -1028,4 +1028,18 @@ Virtual Machines - Bastion
 	
 	
 Virtual Machines - Windows Vs Linux
+	You can launch both Windows and Linux services on Azure VMs
+		Windows 
+			You need to Windows License (or your Windows account with by unactivated)
+			You can bring your own license via Hybrid License
+			you can set a username and password
+			you have to use a much larger instance to run Windows at least a B2
+			It's a full desktop environment
+		Linux
+			Most versions of Linux require no type of license
+			You can set either a username and password or create an ssh-key pair 
+			You can utilize smaller VM sizes because you're not running a full desktop experience
+			Unix and Linux based system traditionally are terminal based environments 
+			
+			
 Virtual Machines - Update Management 
