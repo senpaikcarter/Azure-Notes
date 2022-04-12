@@ -1043,3 +1043,10 @@ Virtual Machines - Windows Vs Linux
 			
 			
 Virtual Machines - Update Management 
+	Update Management allows you to manage and install operating systems updates and patches for both Windows and Linux virtual machines that are deployed in Azure, on-premises, or in other cloud providers
+	When you launch an azure vm you can go to Operations and turn on Guest + Host Updates. This will install the Microsoft Monitoring Agent (MMA) that will install the Microsoft Monitoring Agent (MMA) that will be used to monitor your instances
+	Azure Automations is the underlying service that is installed the agent 
+	Update Management will perform a scan for update compliance
+	A compliance scan is by default, performed every 12 hours on a Windows and every 3 hours on a Linux 
+	It can take between 30 minutes and 6 hours for the dashboard to display updated data from managed computers. 
+		In Azure Automation, you can enable the Update Management, Change Tracking and Inventory, and Start/Stop VMs during off-hours features for your servers and virtual machines. These features have a dependency on a Log Analytics workspace, and therefor require linking the workspace with an Automation account. 
