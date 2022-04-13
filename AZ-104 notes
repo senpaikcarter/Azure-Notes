@@ -1050,3 +1050,10 @@ Virtual Machines - Update Management
 	A compliance scan is by default, performed every 12 hours on a Windows and every 3 hours on a Linux 
 	It can take between 30 minutes and 6 hours for the dashboard to display updated data from managed computers. 
 		In Azure Automation, you can enable the Update Management, Change Tracking and Inventory, and Start/Stop VMs during off-hours features for your servers and virtual machines. These features have a dependency on a Log Analytics workspace, and therefor require linking the workspace with an Automation account. 
+		
+Azure Disks - Introduction
+Azure Disks - Encryption
+Azure Disks - Disk Roles
+Azure Disks - Managed Disk Snapshots Managed Custom Image
+Azure Disks - Disk Types
+Azure Disks - Bursting
