@@ -1150,4 +1150,16 @@ Azure Disks - Disk Types
 			Available ina ll Azure regions and can be used with Azure VMs 
 		
 Azure Disks - Bursting
-	
+	Disk Bursting is the ability to boost disk storage IOPS and MB/s performance for a period of time on both VMs and disks.
+	Bursting allows you to handle unexpected disk traffic.
+	This allows you to get more use out of your disk, avoid permanently upgrading to a more performance disk.
+	Bursting on Disks and VMs are independent of one another.
+	If you have a bursting disk you don’t need a bursting VM.
+	Burstable VMs
+		Lsv2 series (All Regions)
+		Ds3 series (West Central US)
+		Esv3 series (West Central US) 
+	Bursting is enabled by default for virtual machines that support it.	
+	Burstable Disk
+		Premium SSDs for disk sizes P20 and smaller  (All Regions) 
+	Bursting is enabled by default for disks that support it. 
