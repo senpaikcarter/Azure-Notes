@@ -1087,6 +1087,26 @@ Azure Disks - Encryption
 			
 			
 Azure Disks - Disk Roles
+	There are 3 main disk roles in Azure, the data disk, the OS disk, the temporary disk 
+		Data disk 
+			a managed disk that's attached to a virtual machine to store application data, or other data you need to keep 
+			registered as SCSI drives and are labeled with a letter you choose 
+			has a maximum capacity of 32767 gibibytes (GiB)
+			The size of a VM determines how many disks you can attach to the type of storage you can use
+		OS Disk 
+			Every virtual machine has one attaached operating system disk 
+			That OS disk has a pre-installed OS, which was selected when the VM was created 
+			This disk contains the boot volume
+			This disk has a maximum capacity of 4095GB
+		Temporary Disk 
+			Most VMs contain a temporary disk, which is not a managed disk. 
+			provides short-term storage for applications and processes, and is intended to only store data such as page or swap files. 
+			Data on the temporary disk may be lost during a maintenance event  or when you redeploy a VM 
+			During a succesful standard reboot of the VM, data on the temporary disk will persist 
+			The temporary disk is typically /dev/sdb on Linux and Windows VMs the temporary disk is D: by default 
+			not encryptedby SSE unless you enable encryption at host. 
+			
+			
 Azure Disks - Managed Disk Snapshots Managed Custom Image
 Azure Disks - Disk Types
 Azure Disks - Bursting
