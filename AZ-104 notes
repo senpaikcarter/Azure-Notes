@@ -1122,4 +1122,32 @@ Azure Disks - Managed Disk Snapshots Managed Custom Image
 	
 	
 Azure Disks - Disk Types
+	Azure offers 4 tiers of disks: 
+		Ultra Disks 
+			deliver high speed, high IOPS, and low latency disk storage for Azure VMs
+			dynamically change the performace of the disk, without the need to restart your VM
+			suited for a data-intensive workloads susch as SAP HANA, top tier databases, and transation-heavy workloads 
+			can only be used as data disks (use a Premium SSD for OS Disk) 
+			Only supported with very specific VM series 
+		Premium SSD 
+			high-performance and low-latency disk support for Azure VMs with input/output (IO) intensive workloads 
+			suitable for mission-critical produciton applications 
+			only be used with VM series that are premium storage compatible 
+			Guaranteed IOPS, and throughput fo that disk (Standard tiers don't have IOPS guarantees) 
+			designed to provide low single digit millisecond latencies and target IOPS and throughput described in the preceding table 99.9% of the time 
+		Standard SSD
+			cost effective storage option optimized for workloads that need consistent performance at lower IOPS levels 
+			Compared to standard HDDs, standard SSDs deliver better availability, consistency, reliability, and latency.
+			Suitable for Web servers, low IOPS application servers, lightly used enterprise applications, and Dev/Test workloads
+    designed to provide single-digit millisecond latencies and the IOPS and throughput up to the limits described in the preceding table 99% of the time
+			IOPS and throughput may vary sometimes depending on the traffic patterns
+			Available on all Azure VMs 
+		Standard HDD
+			reliable, low cost disk support for VMs running latency inseensitive workloads 
+			available on all Azure VMs
+			Latency, IOPS and throughput of standard HDD disks may vary more widely as compared to SSD-bassed disks 
+			designed to deliver write latencies under 10ms and read latencies under 20ms for most IO operation. 
+			Available ina ll Azure regions and can be used with Azure VMs 
+		
 Azure Disks - Bursting
+	
