@@ -1070,6 +1070,22 @@ Azure Disks - Introduction
 	
 	
 Azure Disks - Encryption
+	Azure Managed Disks supports 2 types of encryption: 
+		Server Side Encryption (SSE) 
+		Azure Disk Encryption (ADE)
+	Server Side Encryption (SSE)
+		Provides encryption-at-rest and safeguards your data to meet your organizational security and compliance commitments. 
+		enabled by default for all managed disks, snapshots, and images
+		Temporary disk are not encrypted by server-side encryption unless you enable encryption at host
+		Keys can be managed two ways: 
+			Platform-managed keys - Azure manages your keys 
+			Customer-Managed keys - You manage your keys 
+	Azure Disk Encryption (ADE) 
+		Allows you to encrypt the OS and Data disks by an IaaS Virtual Machine 
+			For Windows encryption done by bitlocker 
+			For Linux encryption is done by DM-Crypt
+			
+			
 Azure Disks - Disk Roles
 Azure Disks - Managed Disk Snapshots Managed Custom Image
 Azure Disks - Disk Types
