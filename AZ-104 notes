@@ -1052,6 +1052,23 @@ Virtual Machines - Update Management
 		In Azure Automation, you can enable the Update Management, Change Tracking and Inventory, and Start/Stop VMs during off-hours features for your servers and virtual machines. These features have a dependency on a Log Analytics workspace, and therefor require linking the workspace with an Automation account. 
 		
 Azure Disks - Introduction
+	A virtual hard drive in the cloud 
+	Block-level storage volumes for SSD and HDD
+	Azure Managed Disks are block-klevel storage volumes that are managed by Azure and used with Azure VMs
+		Managed disks are like a physical disk in an on-premises server but, virtualized
+		You specify the size, type and other configurations without worrying about underlying hardware 
+	Managed disks are designed for 99.999% availability 
+	Azure creates three replicas of your data, allowing for high durability 
+	You can create up to 50,000 VM disks fo a type in a subscription per region 
+	Allowing you to create up to 1000 VMs in a virtual machine scale set using a marketplace image 
+	Managed disks are integrated with availability sets
+	Managed disks support Availability Zones 
+	Azure Backup can be used to create a backup job with time-based bacups and backup retention policies 
+	you can use Azure role-based access control (RBAC) to assign specific permissions for a managed disk to one or more users 
+	You can directly import your Virtual Hard drive Disks (VHD) into Azure Disks 
+	You can use Azure Private links to ensure traffic between Azure Disks and VMs stay within the Microsoft network 
+	
+	
 Azure Disks - Encryption
 Azure Disks - Disk Roles
 Azure Disks - Managed Disk Snapshots Managed Custom Image
