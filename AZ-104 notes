@@ -1304,4 +1304,14 @@ Scale Sets - Scaling Policy
 	
 	
 Scale Sets - Health Monitoring
+	Health monitoring can be enabled to determine if your server is healthy or unhealthy 
+	There are 2 modes of health monitoring
+		Application health extension
+			Ping an HTTP request to a specific path and except a status 200 
+		Load balancer Probe
+			Allow you to check based on TCP, UDP, or HTTP requests 
+	Automatic repair policy 
+		If an instance is found to be unhealthy the delete it and launch a new instance 
+		
+		
 Scale Sets - Advanced Features 
