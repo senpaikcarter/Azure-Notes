@@ -1237,5 +1237,71 @@ Scale Sets - Associate a Load Balancer
 		
 		
 Scale Sets - Scaling Policy
+	A Scaling Policy determines when a VMs should be added or removed to meet current capacity requirements
+	Scale Out
+	When a instance should be added to the Scale Set to increase capacity
+		eg. When CPU Threshold (%) greater than X for Y minutes add X servers
+	Scale In
+		When a instance should be removed to the Scale Set to decrease capacity
+		eg. When CPU Threshold (%) less than X for Y minutes add X servers
+		When you are creating a Scale Set you have very limited options for your Scaling Policy
+	After you create your ScaleSet you have a-lot more options available to configure the rules of your Scaling Policy
+	Built-in Host-based metrics:
+		Percentage CPU
+		Network In
+		Network Out
+		Disk Read Bytes
+		Disk Write Bytes
+		Disk Read Operations/Sec
+		Disk Write Operations/Sec
+		CPU Credits Remaining
+		CPU Credits Consumed 
+	Aggregates
+		Average
+		Minimum
+		Maximum
+		Total
+		Last
+		Count 
+	Operators
+		Greater than
+		Greater than or equal to
+		Less than
+		Less than or equal to
+		Equal to
+		Not equal to 
+	Actions
+		Increase count by X
+		Increase percent by X%
+		Increase count to X
+		Decrease count by X
+		Decrease percent by X%
+		Decrease count to X 
+	If you want more metrics there are 2 ways to collect more information:
+	App Insights installs a small instrumentation package in your application that monitors the app and sends telemetry to Azure.
+	When you want application metrics: Page load performance, Session counts 
+	Azure Diagnostic extension is an agent that runs inside a VM instance. It monitors and saves performance metrics to Azure storage so you can collect more detailed information
+	When you want more detailed Host-based metrics 
+	Scale-In Policy is what determines what VM is removed (deleted) to decrease the capacity of the Scale Set
+	Default
+		Delete the VM with the highest Instance ID
+		Balanced across Availability Zones (AZs) and Fault Domains (ADs) 
+	Newest VM
+		Delete the newest created VM
+		Balanced across Availability Zones (AZs) 
+	Oldest VM
+		Delete the oldest VM
+		Balanced across Availability Zones (AZs) 
+	Update Policy determine how VM instances are brought up-to-date with the latest scale set model
+		Automatic
+			Increasing with start upgrading immediately in random order 
+		Manual
+			Existing instances must be manually upgraded 
+
+		Rolling
+			Upgrades roll out in batches with optional pause 
+	Automatic OS upgrades can be enabled helps to ease update management by safely and automatically upgrading the OS disk for all instances
+	
+	
 Scale Sets - Health Monitoring
 Scale Sets - Advanced Features 
