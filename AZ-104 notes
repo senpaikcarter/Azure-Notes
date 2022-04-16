@@ -1227,7 +1227,15 @@ Scale Sets - Introduction to Scale Sets
 		
 		
 Scale Sets - Associate a Load Balancer
-	
+	A Load Balancer can be associated with a Scale Sets 
+	This will allow you to: 	
+		evenly distribute your VMs across multiple Availability Zones to make your application highly available 
+		Use Load Balancer probe checks for more robust Health Checks 
+	you have the choice between 2 different load balancers: 
+		Application Gateway is an HTTP/HTTPS web traffic load balancer with URL-based routing, SSLL termination, session persistence, and web application firewall. 
+		Azure Load Balancer supports all TCP/UDP network traffic, port-forwarding, and outbound flows. 
+		
+		
 Scale Sets - Scaling Policy
 Scale Sets - Health Monitoring
 Scale Sets - Advanced Features 
