@@ -1315,3 +1315,9 @@ Scale Sets - Health Monitoring
 		
 		
 Scale Sets - Advanced Features 
+	Allocation Policy 
+		By default Scaling sets are limited to 100 instances 
+		You can go beyond 100 (up to 1000 instances) 
+	Proximity placement groups allow you to group Azure resources physically closer together in the same region
+	by default a scale set has a single placement that hold up to 100 VMs
+	If a scale set property called singlePlacementGroup is set to false, then the scale set can be composed of multiple placement groups and has a raange of 0-1000 VMs 
