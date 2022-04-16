@@ -1163,3 +1163,30 @@ Azure Disks - Bursting
 	Burstable Disk
 		Premium SSDs for disk sizes P20 and smaller  (All Regions) 
 	Bursting is enabled by default for disks that support it. 
+	
+	
+Azure Application Gateway - Introduction to Application Gateway
+	Azure Application Gateway is aplication-level routing and load balancing service. 
+		Application Gateway operates on OSI layer 7 also known as the application layer 
+		Aplication Gateway understandhow to work with HTTP/S requests 
+		Advanced routing rules based on the contents of a request 
+		Azure Web Application Firewall (WAF) poloicies can be attached to an Application Gateway to provide additional security. 
+		You need to configure a Frontends 
+			Private IP will create an internal load balancer 
+			Public IP will create a Public/ External load balancer 
+			You need to configure a Backend
+		You'll need to create backend pools 
+			A backend pool is a collection of resources to which your application gateway can send traffic 
+			A backend pool can contain: 
+				virtual machines 
+				virtual machines scale sets 
+				IP addresses 
+				domain names 
+				App services 
+		You need to configure Routing Rules 
+			Listeners list to incoming traffic and passes it to rules 
+			Rules say who should we pass data to 
+			HTTP/S settings say how we should handle HTTP requests 
+			
+			
+Azure Application Gateway - Routing Rules
