@@ -1217,4 +1217,17 @@ Azure Application Gateway - Routing Rules
 		Multi-tenant services like App service or API management rely on a specific host header or SNI extension to resolve the correct endpoint. Change these settings to overwrite the incoming HTTP host header 
 		
 		
-
+Scale Sets - Introduction to Scale Sets
+	Azure Scale Sets allows you to automatically increase or decrease your VM capacity
+		Create Scaling Policies to automatically add or remove based on Host Metrics 
+		Create Health Checks and set Repair Policy to replace unhealthy instances 
+		Associate A Load Balancer to distribute BMs across AZs 
+		You can scale to 100s or even 1000s of VMs using scale sets 
+		A scale set is a group of identical VMs (same image and size) 
+		
+		
+Scale Sets - Associate a Load Balancer
+	
+Scale Sets - Scaling Policy
+Scale Sets - Health Monitoring
+Scale Sets - Advanced Features 
