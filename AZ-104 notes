@@ -1190,3 +1190,31 @@ Azure Application Gateway - Introduction to Application Gateway
 			
 			
 Azure Application Gateway - Routing Rules
+	Listeners 
+	A listener "listens" on a specified port and IP address for traffic that uses a specified protocol 
+	If the listener criteria are met, the application gateway will apply the routing rule 
+		There are 2 types of listeners: 
+			Basic - forward all requests for any domain to backend pools 
+			Multi site - forward requests to different backend pools based on host reader and host name 
+			requests are matched according to the order of the rules and the type of listener 
+				Add your basic listeners last otherwise it will capture all requests 
+	Backend targets
+		Chooses where a route should go either Backend Pool or Redirection 
+	HTTP Settings 
+		To create a rule for Backend Pool you need to create HTTP Setting. 
+		This allows to define how we want to handle cookies, connection draining, port request time out and more 
+	Backend Port 
+		the port where the back-end servers listen to incoming traffic 
+	Cookie-Based affinity 
+		Use cookies to keep a user session on the same server 
+	Connection draining
+		gracefully remove backend pool members during planned service updates 
+	Request Timeouts 
+		the number of seconds that the application gateway will wait to receive a response from the backend pool before it returns a "connection timed out" error message 
+	Override backend path 
+		allows you to override the path in the URL so that the requests for a specific path can be routed to another path 
+	Override Hostname
+		Multi-tenant services like App service or API management rely on a specific host header or SNI extension to resolve the correct endpoint. Change these settings to overwrite the incoming HTTP host header 
+		
+		
+
