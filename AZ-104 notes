@@ -1373,7 +1373,13 @@ Azure App Services - Custom Containers
 		Deploy your Container Image to App Service
 
 
-Azure App Services - Deployment Slots 
+Azure App Services - Deployment Slots
+	Deployments Slots allow you to create different environments of your web-application associated to a different hostname. This is useful when need a staging, QA environment. 
+	Think of it as a way to quickly clone your production environment for other uses. 
+	You can also Swap enviroments this could be how you perform a Blue/Green Deploy. 
+	you can promote our staging to production by swapping, if something goes wrong you could swap them back. 
+
+
 Azure App Services - App Service Environment
 Azure App Services - Deployment
 Azure App Services - Azure App Service Plan
