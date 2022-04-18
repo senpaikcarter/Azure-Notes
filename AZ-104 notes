@@ -1449,4 +1449,39 @@ Azure App Services - Deployment
 	
 	
 Azure App Services - Azure App Service Plan
+	Azure App Service Plan defines how you pay and what resources are available to you.
+	There are 3 pricing tiers for App Service Plan:
+	Shared Tiers
+	There are 2 shared: Free, Shared
+		Free Tier provides:
+			1 GB of disk space
+			Up to 10 apps on a single shared instance
+			No SLA for availability
+			Each app has a compute quota of 60 minutes per day 
+		Shared Tier provides
+			Up to 100 apps on a single shared instance
+			No SLA for availability
+			Each app has a compute quota of 240 minutes per day 
+		Shared Tiers does not support Linux-based instances
+	Dedicated Tiers
+		Basic, Standard, Premium, PremiumV2, PremiumV3
+		Basic
+			More disk space
+			Unlimited apps
+			3 levels in this tier that offer varying amounts of compute power, memory, and disk storage 
+		Standard
+			scale out to three dedicated instances (Can scale up to 10 dedicated instances depending on the price tier)
+			SLA of 99.95% availability
+			3 levels in this tier that offer varying amounts of compute power, memory, and disk storage  
+		Premium
+			Scale to 10 dedicated instances (Can scale up to 30 dedicated instances depending on the price tier)
+			Availability SLA of 99.95%
+			Multiple levels of hardware 
+		Isolated Tier
+			Dedicated Azure virtual network
+    			Full network and compute isolation
+    			Scale out to 100 instances
+			Availability SLA of 99.95%
+			
+			 
 Azure App Services - WebJobs
