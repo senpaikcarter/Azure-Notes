@@ -1406,6 +1406,47 @@ Azure App Services - App Service Environment
 
 
 Azure App Services - Deployment
+	What is Deployment? 
+		The action of pushing changes or updates from a local environment or repository into a remote environment
+	Azure App Services provides many ways to deploy your applications: 
+		Run from Package 
+		Deploy ZIP or WAR (Uses Kudu) 
+		Deploy via FTP 
+		Deploy via cloud sync (Dropbox or One Drive) 
+		Deploy Continuously (GitHub, BitBucket, and Azure Repos) uses Kudu and Azure Pipelines
+		Deploy using a custom container CI/CD pipeline (Deploy for Docker Hub or Azure Container Registry) 
+		Deploy from local Git (Kudu build server) 
+		Deploy using Github Actions
+		Deploy using Github actions containers
+		Deploy with template (ARM templates)
+	Run from a package is when the files in the package are not copied to the wwwroot directory. 
+	Instead, the ZIP package itself gets mounted directly as the read-only  wwwroot directory 
+	All other deployment methods in App Service have deployed to the following directory: 
+		(Windows) D:\home\site\wwwroot
+		(Linux) /home/site/wwwroot
+		Since the same diredctory is used by your app at runtime, it's possible for deployment to fail because of the file lock conflicts, and for the app to behave unpredictably because some fo the files are not yet updated 
+	ZIP and WAR file deployment uses the same Kudu service that powers continuous integration-based deployments. 
+		Kudu is the engine behind git deployments in Azure App Service. 
+		It's an open-source project that can also run outside of Azure. 
+	Kudu supports the following functionality for ZIP file deployment: 
+		Deletion of files left over from a previous deployment 
+		Option to turn on the default build process, which includes package restore
+		Deployment customization, including running deployment scripts 
+		Deployment logs 
+		A file size limit of 2048 MB 
+	You can deploy using Azure CLI 
+	Azure API via REST (cURL) 
+	Azure Portal 
+	You can use (File Transfer Protocol) FTP protocol to upload files. 
+	You will need your own FTP client. You just drag and upload your files. 
+	Go to Deployment Center
+	You can use Dropbox or OneDrive to deploiy using a cloud sync
+	You go to Deployment Center, configure for Dropbox or OneDrive. 
+	When you turn on Sync it will create a folder in your drop cloud drive: 
+		OneDrive: Apps\Azure Web Apps 
+		Dropbox: Apps\Azure 
+	This will sync with your /home/site/wwwroot, so you just update files in that order. 
+	
 	
 Azure App Services - Azure App Service Plan
 Azure App Services - WebJobs
