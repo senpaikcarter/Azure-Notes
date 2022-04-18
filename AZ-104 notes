@@ -1324,6 +1324,7 @@ Scale Sets - Advanced Features
 
 
 Azure App Services - Introduction to Azure App Services 
+	Azure App Service - Quickly deploy and manage Web Apps on Azure without worrying about the underlying infrastructure 
 	Azure App Service is an HTTP-based service for hosting web applications, REST APIs, and mobile backends 
 	you can choose your programming language and either a Windows or Linux Environment 
 		It is a Platform as a Service, so it's the Heroku equivalent for Azure. 
@@ -1344,10 +1345,28 @@ Azure App Services - Introduction to Azure App Services
 		Shared Tier - Free, Shared (Linux not supported) 
 		Dedicated Tier - Basic, Standard, Premium, PremiumV2, PremiumV3
 		Isolated Tier - Azure App Services can also run docker single or multi-containers
+	When you create your app you have to choose a unique name since it becomes a fully qualified domain 
 
 
-Azure App Services - Runtimes 
-Azure App Services - Custom Containers 
+Azure App Services - Runtimes
+	What is a Runtime Environment?
+		A runtime software/ instructions that are executed while your program is running. 
+		A runtime generally means what programming language and libraries and framework you are using. 
+	A runtime for Azure App Services will be a pre-defilned container that has your programming language and commonly used library for that language installed. 
+		With Azure App Services you choose a runtime 
+			.NET 
+			.NET Core
+			Java
+			Ruby
+			Node.js
+			PHP
+			Python
+		Azure App services will have generally multiple latest verisons of a programming language eg. Ruby 2.6, 2.7
+		Its common for a cloud provider to stop supporting older versions so you keep current and forces customer to keep good security practices by having latest patches. 
+
+	 
+Azure App Services - Custom Containers
+	 
 Azure App Services - Deployment Slots 
 Azure App Services - App Service Environment
 Azure App Services - Deployment
