@@ -1320,4 +1320,36 @@ Scale Sets - Advanced Features
 		You can go beyond 100 (up to 1000 instances) 
 	Proximity placement groups allow you to group Azure resources physically closer together in the same region
 	by default a scale set has a single placement that hold up to 100 VMs
-	If a scale set property called singlePlacementGroup is set to false, then the scale set can be composed of multiple placement groups and has a raange of 0-1000 VMs 
+	If a scale set property called singlePlacementGroup is set to false, then the scale set can be composed of multiple placement groups and has a range of 0-1000 VMs 
+
+
+Azure App Services - Introduction to Azure App Services 
+	Azure App Service is an HTTP-based service for hosting web applications, REST APIs, and mobile backends 
+	you can choose your programming language and either a Windows or Linux Environment 
+		It is a Platform as a Service, so it's the Heroku equivalent for Azure. 
+	Azure App Services take scare of the following underlying infrastructure: 
+		Security patches for OS and languages 
+		Load balancing 
+		Autoscaling
+		Automated manager
+	Azure App Service makes it easy to implement common integrations and featurs such as: 
+		Azure DevOps (for deployments) 
+		Github integration
+		Docker Hub Integration
+		Package Managment
+		Easy to setup staging environments 
+		Custom Domains 
+		Attaching TLS/ SSL certificates 
+	you pay based on an Azure App Service Plan: 
+		Shared Tier - Free, Shared (Linux not supported) 
+		Dedicated Tier - Basic, Standard, Premium, PremiumV2, PremiumV3
+		Isolated Tier - Azure App Services can also run docker single or multi-containers
+
+
+Azure App Services - Runtimes 
+Azure App Services - Custom Containers 
+Azure App Services - Deployment Slots 
+Azure App Services - App Service Environment
+Azure App Services - Deployment
+Azure App Services - Azure App Service Plan
+Azure App Services - WebJobs
