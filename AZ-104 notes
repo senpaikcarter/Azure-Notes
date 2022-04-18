@@ -1366,7 +1366,13 @@ Azure App Services - Runtimes
 
 	 
 Azure App Services - Custom Containers
-	 
+	Azure App Service allows you defined custom containers for Windows or Linux
+	You might want to create your own custom container to use a different runtime or bundle in packages or software 
+		Create your own Docker Container on your local environment 
+		Push the Docker container to Azure Container Registry
+		Deploy your Container Image to App Service
+
+
 Azure App Services - Deployment Slots 
 Azure App Services - App Service Environment
 Azure App Services - Deployment
