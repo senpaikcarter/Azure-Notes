@@ -2096,6 +2096,44 @@ Azure Container Instances -	Container Troubleshooting
 	To get metrics such as CPU usage az monitor metrics list
 	
 	
+Azure Container Registry - Introduction to ACR 
+	Create and maintain Azure container registries to store and manage your private Docker container images and related artifacts.
+	Azure Container Registry is a managed, private Docker registry service based on the open-source Docker Registry 2.0
+	Use Azure Container Registries with your existing container development and deployment pipelines
+	Use Azure Container Registry Tasks to build container images in Azure.
+	Pull images from an Azure container registry to various deployment targets:
+		Kubernetes
+		DC/OS
+		Docker Swarm 
+	Many Azure services have direct support to use ACR:
+		Azure Kubernetes Service (AKS)
+		Azure App Service
+		Azure Batch
+		Azure Service Fabric
+		and more! 
+	Developers can also push to a container registry as part of a container development workflow with delivery tools such as:
+		Azure Pipelines
+		Jenkins 
+		Many ways to work with ACR via: Azure CLI
+		Azure PowerShell
+		Azure Portal
+		Azure SDK
+		Docker Extension for Visual Studio Code 
+
+
+Azure Container Registry - Registry Tasks 
+	ACR Tasks allow you to automate OS and framework patching for your Docker containers.
+	For Quick tasks you can push a single container image to a container registry on-demand, in Azure, without needing a local Docker Engine installation
+	You can trigger automated builds by:
+		source code updates
+		updates to a container's base image
+		Timers on a schedule 
+	You can create multi-step tasks
+	Each ACR Task has an associated source code context
+		the location of a set of source files used to build a container image or other artifact 
+	Tasks can take advantage of run variables
+		reuse task definitions and standardize tags for images and artifact 
+
 	
 	
 	
