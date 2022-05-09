@@ -2518,5 +2518,20 @@ Azure Virtual WAN - SD WAN
 	You are configuring virtual devices in Virtual Wan so your on-premise can connect to your Hub so it has the fastest route to your Azure cloud resources.
 	
 	
-	
+Azure Virtual Network Gateways - Introduction to Virtual Network Gateways
+	What is a (Virtual Private Network) VPN?
+	A VPN extends a private network across a public network and enables users to send and receive data across shared or public networks as if their computing devices were directly connected to the private network.
+	What is a Virtual Network Gateway?
+		A virtual network gateway is the software VPN device for your Azure virtual network.
+		When you deploy a virtual network gateway it will deploy two or specialized VMs in specific subnet you need to create called a “gateway subnet”
+		These deployed VMs contain routing tables and run specific gateway services. 
+		You will choose a Gateway Type and that will determine if it’s a VPN Gateway or an ExpressRoute Gateway 
+
+
+Azure Virtual Network Gateways - Virtual Network Gateway Designs 
+	When you create a VPN Gateway you are generally designing for one of the following topologies:
+	Site-to-Site (S2S) When you connect Azure to an On-Premise Data Center
+	Multi-Site When you connect Azure to multiple On-Premise Data Centers
+	Point-to-Site (P2S) When you connect Azure to multiple individual computers
+	VNet-to-VNet When you connect two VNets in different regions, subscriptions or deployment models
 	
