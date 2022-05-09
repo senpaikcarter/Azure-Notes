@@ -2031,10 +2031,69 @@ Azure Backup - Azure Site Recovery
 	Recovery Time Objective is concerned with getting applications and systems back up and running as soon as possible within the pre-defined timeframe
 
 
+Azure Container Instances - Introduction to ACI 
+	Azure Container Instances (ACI)
+	Package, deploy, and manage cloud applications using containers Fully Managed Docker as a Service
+	Azure Container Instances (ACIs) allow you to launch containers without the need to worry about configuring or managing the underlying virtual machine
+	Azure Container Instances is designed for isolate containers:
+		simple applications
+		task automation
+		build jobs 
+		Containers can be provisioned within seconds where VMs can take several minutes
+		Containers are billed per second where VMs are billed per hour (greater savings)
+		Containers have granular and custom sizing of vCPUs, Memory and GPUs where VMs sizes are predetermined
+		ACI can deploy both Windows and Linux containers
+		You can persist storage with Azure Files for your ACI containers
+		ACIs are accessed via a fully qualified domain name (FQDN) eg  customlabel.azureregion.azurecontainer.io. 
+	Azure provides Quickstart images to start launching example applications but you can also source containers from:
+		Azure Container Registry
+		Docker Hub
+		Privately Hosted Container Registry 
+	Container Groups are collections of containers that get scheduled on the same host machine. The containers in a container group share:
+		lifecycle
+		Resources
+		local network
+		storage volumes 
+	Container Groups are similar to a Kubernetes pod
+	Multi-container groups currently support only Linux containers. 
+	There are two ways to deploy a multi-container group:
+		Resource Manager Template (ARM template) —  when you need to deploy additional Azure service resources
+		YAML File —  when your deployment includes only container instances. 
 
-	
-	
-	
+
+Azure Container Instances - Container Restart Policies 
+	A container restart policy specifies what a container should do when their process has completed.
+	Azure Container Instances has 3 restart-policy options:
+		Always (default) Containers are always restarted. Suited for long running tasks eg. web-servers
+		Never Containers run one time only. Suited for one off tasks. eg. background jobs
+		OnFailure Containers that encounter an error 
+
+
+Azure Container Instances - Container Environment Variables 
+	Environment variables (Env Vars) allow you to pass configuration details to your containers.
+	Environment variables can be set via the Azure Portal, CLI or PowerShell
+	Secured Environment Variables
+	By default, Environment Variables are store in plaintext.
+	If you need to secure your environment variables you can use the --secure-environment-variables flag
+
+
+Azure Container Instances -	Container Persistent Storage 
+	Azure Containers are stateless by default.
+	When a container crashes or stops all state is lost.
+	To persist state you need to mount an external volume
+	You can mount the following external volumes:
+		Azure Files (file share)
+		Secret volume
+		Empty Directory
+		Cloud git repo 
+	To mount a file volume you need do this via PowerShell or CLI and specify the details to mount the drive
+
+
+Azure Container Instances -	Container Troubleshooting 
+	To troubleshoot a container you can pull logs with az container logs
+	To get diagnostic information during container startup use the az container attach
+	To start an interactive container run az container exec
+	To get metrics such as CPU usage az monitor metrics list
 	
 	
 	
