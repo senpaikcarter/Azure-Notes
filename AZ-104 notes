@@ -2458,7 +2458,64 @@ Azure Network Security Groups - NSG Combinations
 	If you wanted to open port 80 you would need to allow port 80 on both the subnet and NIC NSG	
 	
 	
-	
+Azure Virtual WAN - Introduction to Azure Virtual WAN
+	Azure Virtual WAN is a consolidated networking service that brings many networking, security, and routing functionalities in a single operational interface. 
+	These functionalities include
+		branch connectivity (via connectivity automation from Virtual WAN Partner devices such as SD-WAN or VPN CPE)
+		Site-to-site VPN connectivity,
+		remote user VPN (Point-to-site)
+		connectivity, private (ExpressRoute) connectivity,
+		intra-cloud connectivity (transitive connectivity for virtual networks)
+		VPN ExpressRoute inter-connectivity,
+		routing
+		Azure Firewall encryption for private connectivity. 
+	Azure Virtual WAN itself is a Software Defined WAN (SD-WAN)
+	Azure Virtual WAN is a much better way to route to your branches, datacenters, VNet and cloud services.
+
+
+Azure Virtual WAN - PoPs
+	A Point of Presence (PoP) Is an entry at the edge of a Network. eg. ISP Datacenter
+	Your Office
+	A Hop is when you change networks
+	For enterprises, traversing the internet is not ideal for speed because You have little not control on the fastest route through the internet
+	Another Branch Office
+	Your Data Center
+
+
+Azure Virtual WAN - MPLS
+	What if instead of using the Internet we establish a private connection through trusted partners datacenters
+	We apply a special label to our packets so special network devices can read the label’s end destination and forward the packet through the most efficient route through this private network.
+	This is what is known as MPLS
+	What is Multi-Protocol Label Switching (MPLS)?
+	It’s a method of packet forwarding where instead of using IP Address and Layer 3 information to make forwarding decisions an MPLS label is used to determine the shortest route to end destination.
+	MPLS is a private connection linking data centers and branch offices. 
+	MPLS is outsourced and managed by service providers who guarantee network performance, quality, and availability.
+	MPLS uses a special network hardware that combines both a router and switch called a Label Switch Router (LSR)
+	MPLS is efficient because the path for a Label across the network will be pre-determined called a Label Switched Path
+	An MPLS Label is data inserted between Layer 2 and Layer 3 of your IP Packet and this is what they call a Shim
+	Why use an MPLS?
+		Virtual Private Networks (VPNs) — It makes it easy to for us to establish private connections
+		Traffic Engineering (TE) — We can control how are packets traverse the network
+		Quality of Service (QoS) — We can ensure the performance and availability of our packets 
+	What is the downsides of MPLS?
+		They get really expensive
+		Its private and not secure (its just a routing mechanism, there is no inherit encryption)
+		With the rise of cloud services, you still have to traverse the internet any in many cases 
+
+
+Azure Virtual WAN - SD WAN
+	If you want a fast and private connection to Azure you traverse the MPLS to a data center owned by trusted Azure partner and you establish your ExpressRoute to your VPN
+	If you want to use public facing cloud service like Office 365, traveling through your MPLS over ExpressRoute into the Microsoft Network to Office 365 and back through that route is not always fast
+	We still have to do some hopping but maybe there is a better way
+	Azure has Point of Presence (PoP) distributed all around the globe that has a regional presence and so connecting to Office 365 will be generally faster going through the internet.
+	What is Software Defined WAN (SD-WAN)?
+	SD-WAN decouples CPU intensive tasks from routers such as Management, Operations, and the Control plane that can now be controlled in a central location remotely and virtually at your headquarters. Since most ISPs support SD-WAN architecture you can directly control the flow of traffic through the internet.
+	SD-WAN can replace MLPS, so you traverse the internet instead of a private network
+	SD-WAN is more cost-effective and require less configuration than an MLPS initially and at scale
+	SD-WAN is secure because you will use HTTPS which is supported by your ISP
+	With SD-WAN you are pre-determining the path through the Internet. So you can perform the least amount of hops to the closest Azure Point of Presence (PoP)
+	With Azure VirtualWAN you are deploying VNet with service endpoints on the edge of a region which is called Hubs
+	You are configuring virtual devices in Virtual Wan so your on-premise can connect to your Hub so it has the fastest route to your Azure cloud resources.
 	
 	
 	
