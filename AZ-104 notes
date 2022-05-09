@@ -2134,7 +2134,42 @@ Azure Container Registry - Registry Tasks
 	Tasks can take advantage of run variables
 		reuse task definitions and standardize tags for images and artifact 
 
-	
+
+Azure Kubernetes Service - Introduction to AKS 
+	Azure Kubernetes Service (AKS)
+	Fully Managed Kubernetes as a Service
+	Azure Kubernetes Service (AKS) makes it simple to deploy a managed Kubernetes cluster in Azure
+	Azure will manage for you the:
+		Kubernetes masters 
+		health monitoring
+		maintenance 
+	You only have to maintain the:
+		agent nodes 
+	AKS service is free
+	You only pay for the agent nodes within the cluster not the masters
+	When you deploy an AKS cluster, the Kubernetes master and all nodes are deployed and configured for you
+		Additional features can also be configured during the deployment process such as:
+		Advanced networking
+		Azure Active Directory integration to use Kubernetes role-based access control (Kubernetes RBAC)
+		Monitoring
+		Windows Server containers are supported in AKS 
+	You should use AKS for scenarios where you need on-premises full container orchestration:
+		service discovery across multiple containers
+		automatic scaling
+		coordinated application upgrades 
+
+
+Azure Kubernetes Service - Bridge to Kubernetes 
+	Bridge to Kubernetes is an extension in Visual Studio and Visual Studio Code that allows developers to write, test, and debug microservice code on their development workstations.
+	Bridge to Kubernetes allows you include a locally running service to your AKS cluster.
+	Side-stepping to create Docker, Kubernetes configuration
+	For the lifetime of this connection, a proxy is added to your cluster in place of your Kubernetes deployment that redirects requests to the service to your development computer.
+	When you disconnect, the application deployment will revert to using the original version of the deployment running on the cluster.
+	Azure Dev Spaces will be retired on October 31, 2023.
+	Customers should move to using Bridge to Kubernetes, a client developer tool.
+
+
+
 	
 	
 	
