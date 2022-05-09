@@ -1951,6 +1951,88 @@ Azure Monitor - Application Insights
 		Continuous Export 
 	
 	
+Azure Backup - Azure Backup Service 
+	Azure Backup Service is a backup layer that spans many Azure services.
+	You won’t find it by searching based on the service name
+	Azure Backup is directly integrated with Azure Services
+	What can I backup?
+		On-Premise
+		Azure VMs
+		Azure Files
+		SQL Server (within Azure VM)
+		SAP HANNA databases (within Azure VM)
+		Azure Database for PostgreSQL server 
+	Why use Azure Backup?
+		Offload on-premises backups
+		Backup your VMs
+		Scales Easily
+		Get unlimited data transfer (no limit and no charge)
+		Keep data secure (built-in security at-rest and in-transit)
+		Centralized monitoring and management
+		App Consistent Backups (restore apps back to an exact state)
+		Automatic Storage Management
+		Multiple Storage Options 
+
+
+Azure Backup - MARS Vaults 
+	Azure Recovery Services (ARS) vault is a storage entity in Azure that houses data and recovery points created over time.
+	The data is copies of data, or configuration information for VMs, workloads, servers, or workstations. 
+	Backup data for various Azure services: eg.
+		IaaS VMs (Linux or Windows)
+		Azure SQL databases. 
+	Recovery Services vaults supports:
+		System Center (Data Protection Manager) DPM
+		Windows Server
+		Azure Backup Server
+		and more.  
+	Recovery Services vaults has the following features:
+		Enhanced capabilities to help secure backup data
+		Central monitoring for your hybrid IT environment
+		Azure role-based access control (Azure RBAC)
+		Soft Delete
+		Cross Region Restore 
+    
+ 
+Azure Backup - MARS Agent
+	Microsoft Azure Recovery Services (MARS) agent can back up files, folders, and system state from Windows on-premises machines and Azure VMs
+	Backups are stored in a Recovery Services vault in Azure
+	MARS agent is also known as the Azure Backup agent
+	The MARS agent does not support Linux operating systems
+	To install the agent and perform backups you’ll need to:
+		create an Azure Recovery Services vault
+		Create a backup policy within the vault
+		Configure secure route for back eg. ExpressRoutes or Private Endpoints (optional)
+		Download the MARS agent
+		Install and register the Agent to your Windows machine. 
+    
+
+Azure Backup - Backup Policy 
+	To create a backup policy you choose a datasource type:
+		Azure VMs or PSQL database 
+	Choose the frequency
+	How many snapshots you want to retain
+	Choose the time range for your retention
+
+
+Azure Backup - Azure Site Recovery
+	Azure Site Recovery (ASR) is a hybrid (on-premise to cloud) backup solution for site-to-site recovery.
+	ASR is one of the tools useful for your business continuity and disaster recovery (BCDR) strategy
+	Site Recovery replicates workloads from a primary site to a secondary site.
+	In case primary site suffers a failure, Site Recovery will fail-over to the secondary site to ensure continuity of services
+	Site Recover can replicate:
+		Azure VMs between regions (cross-region replication)
+		Windows, Any OS, and Linux
+		On-premise to Azure
+		Between other Cloud Service Providers eg AWS to Azure
+		VMWare, Hyper-V, or Physical Machines
+		Recovery Point Objectives (RPO) how often you backup (how much data loss can you tolerate?)
+		Recovery Time Objectives (RTO) how quickly you can recover a backup after experiencing a disaster
+	Recovery Point Objective is concerned with the possible amount of data (expressed as time) that could be lost following a failure event.
+	Recovery Time Objective is concerned with getting applications and systems back up and running as soon as possible within the pre-defined timeframe
+
+
+
+	
 	
 	
 	
