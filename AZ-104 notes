@@ -2401,7 +2401,6 @@ Azure Networking - Network Performance Monitor
 	Network Performance Monitor (NPM) is a cloud-based hybrid network monitoring solution that helps you monitor network performance between various points in your network infrastructure.
 	It also helps you monitor network connectivity to service and application endpoints and monitor the performance of Azure ExpressRoute.
 	To use NPM you need to create an NPM resource
-
 		In order to create an NPM resource you need to create a Log Analytics Workspace 
 	The solution generates alerts and notifies you when a threshold is breached for a network link. It also ensures timely detection of network performance issues and localizes the source of the problem to a particular network segment or device.
 	Network Performance Monitor detects network issues like:
@@ -2410,9 +2409,53 @@ Azure Networking - Network Performance Monitor
 		unconventional network issues 
     
 
-	
-	
-	
+Azure Network Security Groups - NSG Rules 
+	Network security group (NSG) filters network traffic to and from Azure resources in a VNet
+	An NSG is composed of many Security Rules
+	Each Security Rule has the following properties:
+	Name — A unique name within the network security group.
+	Source or destination — An IP Address or CIDR block, Service Tag or Application Security Group
+	Port Range — Specify a single or range of ports. eg. 80 or 10000-10005
+	Protocol — TCP, UDP, ICMP or ANY
+	Action — Allor or Deny
+	Priority — A number between 100 and 4096 (lower number higher priority)
+		Inbound Rules apply to traffic entering the NSG
+		Outbound Rules apply to traffic leaving the NSG 
+
+
+Azure Network Security Groups - Default Security Rules 
+	Azure sets the following default security rules when you create an NSG:
+		Outbound Rules see webpage 
+		Inbound Rules see webpage 
+
+
+Azure Network Security Groups - Security Rules Logic 
+Security Rules has a lot of logic to determine how to apply its rules
+		You may not create two security rules with the same priority and direction.
+		You can have 5000 NSG per subscription, 1000 NSG rules per NSG
+		Priority
+			Rules are processed in priority order, with lower numbers processed before a higher number
+			Network security group security rules are evaluated by priority using the 5-tuple information to allow or deny traffic: 1] source 2] source port 3] Destination 4] destination port 5] protocol 
+		Flow Records
+			The flow record allows a network security group to be stateful. 
+			A flow record is created for existing connections
+			Communication is allowed or denied based on the connection state of the flow record.  
+		Statefulness
+			If you specify an outbound security port you don’t need to set the inbound port since it will be set for you.
+			You only need to specify an inbound security rule if communication is initiated externally.
+			The opposite is also true. If inbound traffic is allowed over a port, it's not necessary to specify an outbound security rule to respond to traffic over the port. 
+		Interruption
+			Existing connections may not be interrupted when you remove a security rule that enabled the flow.
+			Traffic flows are interrupted when connections are stopped and no traffic is flowing in either direction, for at least a few minutes. 
+
+
+Azure Network Security Groups - NSG Combinations 
+	Let’s look at how rules changed based on NSG attached
+	When there is no NSG assigned to the Subnet or NIC then all traffic is allowed
+	When an NSG is assigned to the NIC and no NSG at the subnet then rules are predictable based on allow and deny rules
+	An NSG applied to a subnet applies its rules to all resources in that subnet
+	First, the NSG rules are evaluated at the subnet, Then the rules at the NIC are evaluated
+	If you wanted to open port 80 you would need to allow port 80 on both the subnet and NIC NSG	
 	
 	
 	
