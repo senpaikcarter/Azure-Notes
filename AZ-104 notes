@@ -2169,8 +2169,65 @@ Azure Kubernetes Service - Bridge to Kubernetes
 	Customers should move to using Bridge to Kubernetes, a client developer tool.
 
 
+Azure DNS - Introduction to Azure DNS
+	What is a Domain Name System (DNS)?
+	It is a service that is responsible for translating (or resolving) a service name to its IP address.
+	Azure DNS is a hosting service for DNS domains that provides name resolution by using Microsoft Azure infrastructure
+	Public DNS Internet-facing
+		Allows you to manage domains for internet accessible domains
+			Pointing your domain to your website
+			Setting records to prove you own the domain
+			Records to connect you domain to your email server 
+	Private DNS Internal-facing
+	Allow you to use your own custom domains instead of the Azure provided domains
+		Many Azure Services use fully qualified domain name (FQDN) to identify services on the network.
+			eg. Azure Storage Accounts FQDN: http://storageaccount.file.core.windows.net/ 
+	You can't use Azure DNS to buy a domain name.
+	You can purchase a domain in App Services or a third-party provider and have Azure DNS manage
 
-	
+
+Azure DNS - Zones Records Record Set
+	What is a DNS zone?
+	A DNS zone is a container for all your DNS records for a specific domain name
+	What is a record?
+	A DNS record is a rule that says where to send your domain name
+	A record is composed of name, type and value:
+		The name tells the record how to listen eg. www
+		The type tells how to handle the record eg. A go to the IP address
+		The value inform us what we should eg. IP address value 104.194.51.120 
+	What is a record set?
+	Sometimes you need to group a bunch of records together, this is what is called a record set. In Azure DNS you always create record sets, even if they only contain a single record.
+	This record set has multiple records for Name Servers (NS), so if your primary DNS server becomes available it will know to you the second, third or fourth DNS server as a backup server.
+
+
+Azure DNS - Record Sets 
+	In Azure you always create Record Sets even when you just want a single record.
+	Naming your Record
+	Name A record that has a name is considered a Fully qualified domain (FQDN) or you can think of it as a subdomain eg. https://www.exampro.co
+	No Name A record that is left empty is considered an apex or naked domain eg. https://exampro.co
+	Wildcard You can set wildcards which act as catch-alls. Eg * or *.trek
+	@ You can use an at-sign (@) as your name. This is shorthand for saying ORIGIN. So this means you’re pointing to the naked domain.
+	What is a Time to Live (TTL)?
+	TTL tells other servers requesting your domain how long it should cache this record so it doesn’t need to frequently ask you what to do.
+	A long TTL can reduce costs because servers check less frequently
+	A short TTL can have failover happen faster, since you have to wait for the cache to expiry for a server to see that you’ve changed a record to point to you backup server.
+	Record Type
+	Azure Supports the following types of records
+	A Address lets you point your domain to an IPv4 address
+	AAAA lets you point your domain to an IPv6 address
+	CAA Certificate Authorities (CAs) records authorized who can issue certificates for their domain
+	CNAME Canonical Name record creates an alias from one domain to another so you set the record value to a domain
+	MX Mail Exchange records point to mail servers that handle emails
+	NS Name Server records identify multiple DNS servers for the domain and there are multiple in case the primary DNS server fails
+	PTR Pointer record points to a domain or host name but is used for reverse DNS lookup
+	SRV Service record is used to identify computers that host specific services, like locating Domain Controllers for Active Directory
+	TXT Text records is just text, and can serve multiple purposes, such as documentation or as a means of verification
+	SOA Start of Authority record contains administrative details about a domain
+	Azure has its own special record type called an Alias that work with A, AAAA and CNAME records
+	Azure Alias record points directly to an Azure resource instead of to an IP or hostname
+	Imagine you were pointing to an IP or hostname and you deploy a service that causes the IP to change. Your domain would be left dangling (pointing to now where) And you would have to manually update the record to the new correct address.
+	Azure Alias records always point to the right place.
+
 	
 	
 	
