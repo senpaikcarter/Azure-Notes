@@ -2228,8 +2228,188 @@ Azure DNS - Record Sets
 	Imagine you were pointing to an IP or hostname and you deploy a service that causes the IP to change. Your domain would be left dangling (pointing to now where) And you would have to manually update the record to the new correct address.
 	Azure Alias records always point to the right place.
 
-	
-	
+
+Azure Networking - Introduction to VNets 
+	Virtual Network (VNet) is a logically isolated section of the Azure Network where you launch your Azure resources.
+	Azure DNS — manage your own DNS domain
+	Virtual Network (VNet) — logically isolated section of Azure network
+		Address spaces
+		Route Tables
+		Subnets 
+	Network Security Groups A virtual firewall at the subnet or NIC level
+	ExpressRoute A 50 Mbps-10 Gbps connection between on-premise to VNET
+	Virtual WAN a centralized network to route different network connections
+	Virtual Network Gateway - A site-to-site VPN connection between a VNet and local networks
+	Network Interfaces virtual network device to allow your VMs to communicate using IP protocols
+
+
+Azure Networking - VNet Peering 
+	VNET peering is when you connect multiple VNet so they act as one network.
+	There are 2 types of VNet Peering:
+		1. Regional VNet Peering When you peer two VNets from the same region
+		2. Global VNet peering When you peer two VNets from two different regions 
+
+
+Azure Networking - Network Interfaces 
+	What is a Network Interface?
+	Software or hardware interface between two pieces of equipment or protocol layers in a computer network.
+	A Network Interface Controller (NIC)
+	A computer hardware component that connects a computer to a computer network.
+	Also known as:
+		network interface card
+		network adapter
+		LAN adapter
+		physical network interface 
+	1990s Ethernet Interface Controller card
+	NICs communicate using Internet Protocol (IP)
+	NICs are devices for both the:
+		Data Link Layer (Layer 2)
+		Physical Layer (Layer 1) 
+	Azure Network Interfaces (NICs)
+		Azure Network Interfaces are attached to Azure VM instance.
+		Without an NIC, An Azure VM instance would have no way to communicate.
+		An Azure VM instance has to have an NIC and can have multiple NICs. 
+    
+    
+Azure Networking - Network Routes and Route Tables 
+	What is a Route Table?
+	A Route Table is a table of data stored in a router or network host that lists routes to the next destinations.
+	Routes are the roads to your virtual network. Without them, data would not know where to go.
+	Default System Routes
+	By default Azure creates a route table with defaults routes and associates them to your subnets so you don’t have to do anything to get routing.
+	If you were to check the Azure Route Table service you won’t see these default route tables since it hidden and managed by Azure for you.
+	Azure sets the following default routes:
+	Source 	Address prefixes 	Net hop type
+	Default 	Unique to VNeT 	Virtual Network
+	Default 	0.0.0.0/0 	Internet
+	Default 	10.0.0.0/8 	None
+	Default 	192.168.0.0/16 	None
+	Default 	100.64.0.0/10 	None
+	Net hop type
+		Virtual Network ← A route to your VNet
+		Internet ← A route to the Internet
+		None ← Reserved for private use in RFC 1918 so don’t go anywhere
+		None ← Reserved for private use in RFC 1918 so don’t go anywhere
+		None ← Reserved in RFC 6598 
+	Azure may assign additional default routes based if you have other capabilities enabled
+	User Defined Routes
+	You can override the system routes assigned to your subnets by creating a new route table and associating it with a subnet.
+	A User defined Route table can be assigned to multiple subnets, but a Subnet can only have one user defined route table
+	When you create your user defined route table, all the default system routes remain unless you override them within your route table
+	If you wanted to have a private subnet (a subnet that cannot reach the internet)
+	You would just create a new route for 0.0.0.0/0 that hops to None
+	The Next Hop is where to send the route:
+	The virtual appliance is a VM that runs a network application
+	eg. Firewall In this hop type you also have to provide the Private IP address to the VM
+
+
+Azure Networking - Address Space 
+	What is an Address Space?
+	It is a range of available IP addresses that you are allocating for you use within your Virtual Network (VNeT)
+	The amount of IP addresses available is determined based on the CIDR range notation eg. 10.0.0.0/24
+	A CIDR Block of /24 will allocate 256 possible addresses A CIDR Block of /27 will allocate 32 possible addresses
+	Azure Virtual Network (VNeT) allows you defined a multiple address spaces
+	Address ranges cannot overlap within the same VNet
+	The address count is not the actual available IP addresses as Azure will reserve 5 of the IP addresses:
+		x.x.x.0: Network address
+		x.x.x.1: Reserved by Azure for the default gateway
+		x.x.x.2, x.x.x.3: Reserved by Azure to map the Azure DNS IPs to the VNet space
+		x.x.x.255: Network broadcast address (the last IP in the range, its not always 255) 
+
+
+Azure Networking - Subnets 
+	What is a Subnet?
+	A subnet is a logical division of an address space.
+	Subnets help you define different kinds of workloads and allows you to apply virtual isolation within your network.
+	When you launch an Azure resource you choose the subnet you want to launch within and an IP from that subnet is assigned to your resource
+	Associating a Route Table
+	A subnet needs a Route Table so it can access
+	Public vs Private Subnet
+	Public and Private subnet describes whether a subnet is reachable from the internet or not.
+	Azure has no concept of private and public subnets and its up to you to configure our subnets to have ensure they do no reach the internet by ensuring they have no route via the their route table to the Internet Gateway
+	Associating Network Security Gateways (NSG)
+	You can associate an NSG to protect traffic entering and leaving your subnet by applying security rules that can
+	Allow or deny access based on IP address, port and protocol.
+	Gateway Subnet
+	Azure has a special type of Gateway Subnet that is used by Azure Virtual Network Gateway and that service Launches specialized VMs into that subnet.
+
+
+Azure Networking - Private Links 
+	Azure Private Links allows you to establish secure connections between Azure resources so traffic remains within the Azure Network
+	Private Link Endpoint is a Network Interface that connects you privately and securely to a service powered by Azure Private Link. 	Private Endpoint uses a private IP address from your VNet
+	Third-Party provides can be powered by Private Link
+	Many Azure services by default work with Private Link eg. Azure Storage, CosmoDB, SQL
+	Private Link Service allows you to connect your own workload to Private Link. You need an Azure Standard Internal Load Balancer and associate it with the Link Service
+
+
+Azure Networking - Azure Express Routes 
+	Azure ExpressRoutes creates private connections between Azure datacenters and infrastructure on your premises or in a colocation environment
+	ExpressRoute connections don't go over the public Internet and as a result can offer: more reliability, faster speeds, consistent latencies, higher security
+	Connectivity can be from an:
+		any-to-any (IP VPN) network
+		a point-to-point Ethernet network
+		virtual cross-connection through a connectivity provider at a colocation facility 
+	ExpressRoute Circuits
+	Primary Connection:
+	Microsoft Peering for Office 365, Dynamics 365, Azure Public Services (Public IP)
+	Secondary Connection:
+	Azure Private Peering for VNets
+	ExpressRoute Direct allows for greater bandwidth connections from 50 Mbps to 10Gbps.
+	Ideal where for hybrid solutions with massive amounts of data or where latency matters.
+
+
+Azure Networking - Azure Firewall 
+	Azure Firewall is a managed, cloud-based network security service that protects your Azure VNets resources
+	It is a fully stateful Firewall as a Service (FWaaS) with:
+		built-in high availability
+		unrestricted cloud scalability 
+	You can centrally create, enforce, and log application and network connectivity policies across subscriptions and virtual networks.
+	Azure Firewall uses a static public IP address for your VNet resources allowing outside firewalls to identify traffic originating from your virtual network.
+	The service is fully integrated with Azure Monitor for logging and analytics.
+	Traffic Filtering
+	Traffic is denied by default
+		You launch an Azure Firewall in its on VNet
+		Other VNets pass through this Central Vnet
+		You get Microsoft Threat Intelligence
+			Blocks know malicious IPs and FQDNs 
+
+
+Azure Networking - Azure Network Watcher 
+	Azure Network Watcher provides tools to monitor, diagnose, view network metrics, and enable or disable logs for resources in an Azure virtual network.
+	From Network Watcher you can access:
+		IP flow verify checks 
+		Packet Capture
+		Troubleshoot VPNs, NSGs
+		NSG Flowlogs
+		Diagnostic Logs
+		Traffic Analytics
+		Network Performance Monitor
+		And more…! 
+	Network Watcher can monitor and repair Azure resources you provision eg:
+		Virtual Machines
+		Virtual Networks
+		Application Gateways
+		Load balancer 
+	Network Watcher cannot be used to monitor PaaS (fully managed services) monitoring or Web Analytics
+	Network Watcher is disabled by default in most regions so you need to enable it at per region basis
+	Network Watcher can visualize the topology of your VNets
+	You can download the topology as an SVG you to use in presentations and documentation
+	You can quickly discover and browse your networking components to quickly monitor and repair your virtual network
+
+
+Azure Networking - Network Performance Monitor 
+	Network Performance Monitor (NPM) is a cloud-based hybrid network monitoring solution that helps you monitor network performance between various points in your network infrastructure.
+	It also helps you monitor network connectivity to service and application endpoints and monitor the performance of Azure ExpressRoute.
+	To use NPM you need to create an NPM resource
+
+		In order to create an NPM resource you need to create a Log Analytics Workspace 
+	The solution generates alerts and notifies you when a threshold is breached for a network link. It also ensures timely detection of network performance issues and localizes the source of the problem to a particular network segment or device.
+	Network Performance Monitor detects network issues like:
+		traffic blackholing
+		routing errors
+		unconventional network issues 
+    
+
 	
 	
 	
